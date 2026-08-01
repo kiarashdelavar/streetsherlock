@@ -7,11 +7,11 @@
 | Scenario ID | HS-01 |
 | Scenario name | Cycle-path defect and possible repair recurrence |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed — Product Owner approval required |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Related product boundary | [Product Charter v1.0](product-charter.md) |
-| Last updated | 1 August 2026 |
+| Last updated | 2 August 2026 |
 
 ## 1. Decision and purpose
 
@@ -230,7 +230,7 @@ No answer may be invented or presented as Deventer policy.
 
 | Decision | Owner | Status | Date | Notes |
 |---|---|---|---|---|
-| Freeze HS-01 and its StreetPulse/InfraProof checkpoints | Kiarash Delavar, Product Owner | Proposed | — | Approval required before merge. |
+| Freeze HS-01 and its StreetPulse/InfraProof checkpoints | Kiarash Delavar, Product Owner | Approved | 2 August 2026 | Approved without conditions; controlled as version 1.0. |
 | Validate real municipal workflow and policies | External municipal-domain owner | External validation required | — | Required before pilot claims or configuration. |
 | Validate privacy, legal, security, accessibility, and AI-governance controls | Authorized independent reviewers | External validation required | — | Not self-certified in Sprint 0. |
 
@@ -244,6 +244,6 @@ No answer may be invented or presented as Deventer policy.
 | Synthetic Deventer labelling | Sections 3 and 5 |
 | StreetPulse and InfraProof separated | Sections 1, 6, 8, and HS-AT-10 |
 | Given/When/Then acceptance walkthrough | Section 9 |
-| Product Owner approval | Pending in Section 12 |
+| Product Owner approval | Recorded in Section 12 |
 
-**Review result:** Proposed. E00-02 remains open until the Product Owner approves this document and `mvp-scope.md`.
+**Review result:** Approved by Kiarash Delavar, Product Owner, on 2 August 2026. E00-02 remains open only until PR #4 is merged.
