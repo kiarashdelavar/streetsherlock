@@ -5,8 +5,8 @@
 | Work item | E00-01 |
 | Sprint | Sprint 0 — Product freeze and discovery |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed — awaiting Product Owner approval |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Last updated | 1 August 2026 |
 
@@ -344,13 +344,13 @@ The safest future commercial validation is a read-only shadow pilot that imports
 
 | Decision | Owner | Status | Date | Notes |
 |---|---|---|---|---|
-| Approve product charter and non-goals | Kiarash Delavar, Product Owner | Pending | — | Approval is required before E00-02 and E00-03 move to Ready. |
+| Approve product charter and non-goals | Kiarash Delavar, Product Owner | Approved | 1 August 2026 | Approved without conditions. E00-02 and E00-03 may move to Ready. |
 | Validate municipal workflow and policy assumptions | External municipal-domain reviewer | External validation required | — | Must not be self-certified. |
 | Validate legal, privacy, security, accessibility, and compliance claims | Authorized independent reviewers | External validation required | — | Required before relevant pilot or public claim. |
 
 ### Product Owner decision
 
-After review, update the first approval row to **Approved**, add the decision date, and record any conditions. If the charter is rejected, document the reason and return E00-01 to refinement.
+Kiarash Delavar approved this charter as Product Owner on 1 August 2026 without conditions. Later changes to the approved product boundary require an explicit, recorded product decision.
 
 ---
 
@@ -366,6 +366,6 @@ After review, update the first approval row to **Approved**, add the decision da
 | Non-goals and authority boundaries agree | Sections 11 and 12 |
 | Success signals are measurable and honest | Section 14 |
 | External unknowns are recorded, not guessed | Sections 15 and 16 |
-| No material product ambiguity blocks the next product-freeze issues | Sections 1–19, subject to Product Owner approval |
+| No material product ambiguity blocks the next product-freeze issues | Sections 1–19; Product Owner approval recorded on 1 August 2026 |
 
-**Review result:** Ready for Product Owner review. Not yet approved.
+**Review result:** Approved by the Product Owner on 1 August 2026. E00-01 acceptance criteria are satisfied.
