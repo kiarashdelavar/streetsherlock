@@ -6,11 +6,11 @@
 | Sprint | Sprint 0 — Product freeze and discovery |
 | Release | `v0.1.0-streetpulse-mvp` |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed — Product Owner approval required |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Related documents | [Product Charter v1.0](product-charter.md), [Hero Scenario HS-01](hero-scenario.md) |
-| Last updated | 1 August 2026 |
+| Last updated | 2 August 2026 |
 
 ## 1. Release decision
 
@@ -241,7 +241,7 @@ These questions must receive named owners/dates in E00-04/E00-06 and cannot be g
 
 | Decision | Owner | Status | Date | Notes |
 |---|---|---|---|---|
-| Freeze six categories and `v0.1.0-streetpulse-mvp` cut line | Kiarash Delavar, Product Owner | Proposed | — | Approval required before merge. |
+| Freeze six categories and `v0.1.0-streetpulse-mvp` cut line | Kiarash Delavar, Product Owner | Approved | 2 August 2026 | Approved without conditions; controlled as version 1.0. |
 | Validate municipal workflow, category mapping, and policy | External municipal-domain owner | External validation required | — | Required before a real pilot. |
 | Validate privacy, legal, security, accessibility, and AI-governance controls | Authorized independent reviewers | External validation required | — | Not self-certified by this document. |
 
@@ -257,6 +257,6 @@ These questions must receive named owners/dates in E00-04/E00-06 and cannot be g
 | Testable release gates and measures | Sections 7 and 8 |
 | Scope changes controlled | Section 9 |
 | External questions not invented | Section 10 |
-| Product Owner approval | Pending in Section 11 |
+| Product Owner approval | Recorded in Section 11 |
 
-**Review result:** Proposed. E00-02 remains open until the Product Owner approves this document and `hero-scenario.md`.
+**Review result:** Approved by Kiarash Delavar, Product Owner, on 2 August 2026. E00-02 remains open only until PR #4 is merged.
