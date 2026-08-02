@@ -4,11 +4,11 @@
 |---|---|
 | Document ID | SS-PROD-006 |
 | Work item | E00-08 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Product Owner | Kiarash Delavar |
-| Approval | Pending explicit Product Owner approval |
+| Approval | Approved by Product Owner on 2 August 2026 |
 | Review date | 2 August 2026 |
 | Next review | Before Sprint 1 UI scaffolding and after any approved journey change |
 | Required reviewers | Product Owner self-review; independent municipal-domain, service-design, privacy, security, and accessibility review remain pending |
@@ -163,7 +163,7 @@ These remain external-review gaps in the stakeholder and RAID registers.
 
 | Role | Name | Decision | Date | Scope |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Blueprint consistency and portfolio scope |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Blueprint consistency and portfolio scope |
 | Municipal domain owner | Unassigned external reviewer | Pending | — | Workflow/policy truth |
 | Privacy/legal reviewer | Unassigned external reviewer | Pending | — | Data use, notice, retention and rights |
 | Security reviewer | Unassigned external reviewer | Pending | — | Upload, identity, tokens and trust boundaries |
