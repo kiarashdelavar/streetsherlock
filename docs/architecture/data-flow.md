@@ -6,8 +6,8 @@
 |---|---|
 | Requirement | S0-ARCH-01 |
 | Owner | Kiarash Delavar, Engineering / Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Scope tier | Synthetic portfolio/demo data only |
 | Controlled baseline | Master Project Specification v2.0; approved product/domain baseline; context and container proposals |
 | Related decisions | D-04 and D-06 accepted product boundaries; D-12 through D-18 remain Proposed where applicable |
@@ -158,12 +158,12 @@ Review this document for any new data class, recipient, provider, source, public
 | Safe dependency failure | Pass | Sections 5, 6 and 9 |
 | InfraProof later and no liability automation | Pass | Section 7 |
 | Unknown legal/privacy answers remain open | Pass | Sections 2 and 10 |
-| Product Owner approval before merge | Pending | Approval record |
+| Product Owner approval before merge | Pass | Approval record |
 
 ## 13. Approval record
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Approves the proposed flow baseline only |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approves the proposed flow baseline only |
 | Architecture reviewer | Kiarash Delavar, self-review only | Pending ADR review | — | Provider/storage/API decisions remain Proposed |
 | Privacy/security/legal/data reviewers | Unassigned | External validation required | — | Required before real data, formal assurance, source or retention claims |
