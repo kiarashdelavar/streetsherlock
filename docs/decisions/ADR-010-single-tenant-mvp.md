@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Product / Engineering |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Portfolio demo, local/CI and controlled preview |
 | Depends on | Approved synthetic-data and system-context boundaries |
 
@@ -88,5 +88,5 @@ No multi-tenancy, customer relationship, real municipal data, production isolati
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | MVP scope decision only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Municipal/security/privacy/operations reviewers | Unassigned | Pending | — | Required before any real or multi-municipality tier |
