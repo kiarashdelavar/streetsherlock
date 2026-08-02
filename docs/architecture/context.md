@@ -7,8 +7,8 @@
 | Requirement | S0-ARCH-01 |
 | Sprint | Sprint 0 — Day 2 architecture and trust boundaries |
 | Owner | Kiarash Delavar, Product Owner / Engineering |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Scope tier | Portfolio demo and engineering MVP |
 | Controlled baseline | Master Project Specification v2.0 and approved E00-01 through E00-03 product documents |
 | Related decisions | D-09 through D-18 — all remain Proposed pending ADR review |
@@ -144,12 +144,12 @@ Review this context when work adds a real municipality, participant, source, dat
 | Synthetic Deventer and non-claims | Pass | Section 3 |
 | Safe external failure | Pass | Sections 6 and 8 |
 | ADR decisions remain Proposed | Pass | Document control and Section 12 |
-| Product Owner approval before merge | Pending | Approval record |
+| Product Owner approval before merge | Pass | Approval record |
 
 ## 12. Approval record
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Approval freezes this proposed context for ADR review; it does not authorize a pilot or production use |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approval freezes this proposed context for ADR review; it does not authorize a pilot or production use |
 | Architecture reviewer | Kiarash Delavar, self-review only | Pending ADR review | — | D-09 through D-18 remain Proposed |
 | Municipal/privacy/security/accessibility/legal reviewers | Unassigned | External validation required | — | Required only at the relevant future assurance or pilot gate |
