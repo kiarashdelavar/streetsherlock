@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering / Operations |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Notifications and later approved contractor/workflow delivery |
 | Depends on | ADR-001, ADR-008 and ADR-009 |
 
@@ -90,5 +90,5 @@ No real citizen/contractor delivery, SMTP provider, live credentials, schedule, 
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Boundary only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Security/privacy/operations reviewers | Unassigned | Pending | — | Required before external delivery |
