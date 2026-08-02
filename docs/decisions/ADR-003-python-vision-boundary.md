@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering / AI-data |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Later InfraProof image processing only |
 | Depends on | ADR-001 and approved StreetPulse/InfraProof cut line |
 
@@ -99,5 +99,5 @@ No CV model, dataset, hosted provider, repair decision, pilot or production depl
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Later-scope boundary only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | AI/data, privacy and security reviewers | Unassigned | Pending | — | Required before real images or model claims |
