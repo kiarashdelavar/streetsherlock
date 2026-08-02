@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Product / Domain |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | All StreetPulse and InfraProof decisions |
 | Depends on | Approved charter, glossary and state machines |
 
@@ -94,5 +94,5 @@ No role assignment, municipal policy, legal basis, staffing model, pilot or auto
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Core product authority decision |
+| Product Owner | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Municipal domain/legal/privacy reviewers | Unassigned | Pending | — | Required before operational use |
