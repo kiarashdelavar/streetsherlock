@@ -194,7 +194,7 @@ Accepted decisions are not edited to hide history. Add a new decision that super
 | Date | Actor | Decision IDs | Change | Evidence |
 |---|---|---|---|---|
 | 2026-08-02 | Kiarash Delavar / delivery agent | D-01 to D-20 | Created initial decision register from controlled Sprint 0 evidence and Master Specification proposals | Issue #11 and PR #12 |
-| 2026-08-02 | Kiarash Delavar / delivery agent | Document baseline | Recorded Product Owner approval after merge; individual Proposed architecture decisions remain unapproved | PR #12 and E00-06 approval-cleanup PR |
+| 2026-08-02 | Kiarash Delavar / delivery agent | — | Recorded Product Owner approval after merge; individual Proposed architecture decisions remain unapproved | PR #12 and PR #13 |
 
 ## 11. Acceptance traceability
 
@@ -206,7 +206,7 @@ Accepted decisions are not edited to hide history. Add a new decision that super
 | Human authority preserved | Pass | D-04 and D-16 |
 | Synthetic Deventer/non-partner boundary | Pass | D-06 |
 | Independent assurance cannot be self-closed | Pass | Sections 4 and 8 |
-| No unrelated/code changes | Pass | PR #12 changed only the two intended documentation files |
+| No unrelated/code changes | Pass | PR #12 and PR #13 changed only the intended E00-06 documentation files |
 | Product Owner approval before merge | Not met — process deviation recorded | PR #12 was merged before controlled approval metadata was recorded; Section 12 records the later approval without rewriting history |
 
 ## 12. Approval record
