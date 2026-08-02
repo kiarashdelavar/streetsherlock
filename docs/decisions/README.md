@@ -6,10 +6,10 @@
 |---|---|
 | Requirement | S0-ARCH-02 |
 | Owner | Kiarash Delavar, Engineering / Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Accepted |
 | Last updated | 2 August 2026 |
-| Target decision review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Controlled baseline | Master Project Specification v2.0 and approved S0-ARCH-01 diagrams |
 | Scope | Portfolio demo and engineering MVP |
 
@@ -21,18 +21,18 @@ Approval of an ADR authorizes the stated engineering direction only. It does not
 
 ## Decision register
 
-| ID | Decision | Status | Owner | Target review | Key dependency |
+| ID | Decision | Status | Owner | Decision date | Key dependency |
 |---|---|---|---|---|---|
-| ADR-001 | Modular monolith for the main backend | Proposed | Engineering | 3 Aug 2026 | Approved container diagram |
-| ADR-002 | Java 21 and pinned Spring Boot 4.1.x line | Proposed | Engineering | 3 Aug 2026 | ADR-001 |
-| ADR-003 | Stateless Python/FastAPI vision boundary | Proposed | Engineering / AI-data | 3 Aug 2026 | ADR-001, later InfraProof scope |
-| ADR-004 | PostgreSQL with PostGIS and pgvector | Proposed | Engineering / Data | 3 Aug 2026 | Domain ERD |
-| ADR-005 | Local AI behind a replaceable provider interface | Proposed | Engineering / AI-data | 3 Aug 2026 | Privacy flow, ADR-004 |
-| ADR-006 | n8n limited to delivery automation | Proposed | Engineering / Operations | 3 Aug 2026 | Transactional outbox design |
-| ADR-007 | S3-compatible object storage with classified media zones | Proposed | Engineering / Privacy / Security | 3 Aug 2026 | Data-flow baseline |
-| ADR-008 | Human authority for every official decision | Proposed | Product / Domain | 3 Aug 2026 | Charter, glossary, state machines |
-| ADR-009 | Versioned APIs/events, idempotency, and optimistic concurrency | Proposed | Engineering | 3 Aug 2026 | ADR-001, ADR-004 |
-| ADR-010 | Single-tenant engineering MVP | Proposed | Product / Engineering / Security | 3 Aug 2026 | Synthetic demo boundary |
+| ADR-001 | Modular monolith for the main backend | Accepted | Engineering | 2 Aug 2026 | Approved container diagram |
+| ADR-002 | Java 21 and pinned Spring Boot 4.1.x line | Accepted | Engineering | 2 Aug 2026 | ADR-001 |
+| ADR-003 | Stateless Python/FastAPI vision boundary | Accepted | Engineering / AI-data | 2 Aug 2026 | ADR-001, later InfraProof scope |
+| ADR-004 | PostgreSQL with PostGIS and pgvector | Accepted | Engineering / Data | 2 Aug 2026 | Domain ERD |
+| ADR-005 | Local AI behind a replaceable provider interface | Accepted | Engineering / AI-data | 2 Aug 2026 | Privacy flow, ADR-004 |
+| ADR-006 | n8n limited to delivery automation | Accepted | Engineering / Operations | 2 Aug 2026 | Transactional outbox design |
+| ADR-007 | S3-compatible object storage with classified media zones | Accepted | Engineering / Privacy / Security | 2 Aug 2026 | Data-flow baseline |
+| ADR-008 | Human authority for every official decision | Accepted | Product / Domain | 2 Aug 2026 | Charter, glossary, state machines |
+| ADR-009 | Versioned APIs/events, idempotency, and optimistic concurrency | Accepted | Engineering | 2 Aug 2026 | ADR-001, ADR-004 |
+| ADR-010 | Single-tenant engineering MVP | Accepted | Product / Engineering / Security | 2 Aug 2026 | Synthetic demo boundary |
 
 ## Cross-decision invariants
 
@@ -73,5 +73,12 @@ No ADR may be silently changed from Accepted. A material change requires a super
 - [x] Each ADR contains context, alternatives, consequences, controls, verification and reversal triggers.
 - [x] Decisions align with the approved product/domain and architecture baselines.
 - [x] No application service, database, infrastructure or runtime is scaffolded.
-- [ ] Product Owner decision recorded before merge.
-- [ ] Issue #16 acceptance checklist completed.
+- [x] Product Owner decision recorded before merge.
+- [x] Issue #16 acceptance checklist completed.
+
+## Approval record
+
+| Role | Name | Decision | Date | Notes |
+|---|---|---|---|---|
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | ADR-001 through ADR-010 approved as the engineering direction |
+| External specialist reviewers | Unassigned | Pending | — | Municipal, privacy, security, accessibility, legal, data/licence and operations assurance remain open |
