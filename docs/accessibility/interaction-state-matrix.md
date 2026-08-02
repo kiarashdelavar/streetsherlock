@@ -4,11 +4,11 @@
 |---|---|
 | Document ID | SS-A11Y-001 |
 | Work item | E00-08 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Product Owner | Kiarash Delavar |
-| Approval | Pending explicit Product Owner approval |
+| Approval | Approved by Product Owner on 2 August 2026 |
 | Review date | 2 August 2026 |
 | Next review | Before Sprint 1 UI scaffolding and whenever a critical journey changes |
 | Required reviewers | Product Owner self-review; independent accessibility, service-design, privacy and security review remain pending |
@@ -243,7 +243,7 @@ The following remain open:
 
 | Role | Name | Decision | Date | Scope |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | State coverage and portfolio design target |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | State coverage and portfolio design target |
 | Accessibility reviewer | Unassigned external reviewer | Pending | — | Standards mapping and conformance evidence |
 | Privacy/security reviewer | Unassigned external reviewer | Pending | — | Draft, session, token, upload and restricted-state behavior |
 | Municipal/service-design reviewer | Unassigned external reviewer | Pending | — | Real recovery expectations and language |
