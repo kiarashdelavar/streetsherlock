@@ -7,8 +7,8 @@
 | Requirement | E00-06 |
 | Sprint | Sprint 0 — Product freeze and delivery governance |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | Master Project Specification v2.0 |
 | Related evidence | Approved Product Charter, Hero Scenario, MVP Scope, Glossary, and stakeholder/RACI baseline |
 | Last updated | 2 August 2026 |
@@ -193,7 +193,8 @@ Accepted decisions are not edited to hide history. Add a new decision that super
 
 | Date | Actor | Decision IDs | Change | Evidence |
 |---|---|---|---|---|
-| 2026-08-02 | Kiarash Delavar / delivery agent | D-01 to D-20 | Created initial decision register from controlled Sprint 0 evidence and Master Specification proposals | Issue #11 and E00-06 pull request |
+| 2026-08-02 | Kiarash Delavar / delivery agent | D-01 to D-20 | Created initial decision register from controlled Sprint 0 evidence and Master Specification proposals | Issue #11 and PR #12 |
+| 2026-08-02 | Kiarash Delavar / delivery agent | Document baseline | Recorded Product Owner approval after merge; individual Proposed architecture decisions remain unapproved | PR #12 and E00-06 approval-cleanup PR |
 
 ## 11. Acceptance traceability
 
@@ -205,14 +206,14 @@ Accepted decisions are not edited to hide history. Add a new decision that super
 | Human authority preserved | Pass | D-04 and D-16 |
 | Synthetic Deventer/non-partner boundary | Pass | D-06 |
 | Independent assurance cannot be self-closed | Pass | Sections 4 and 8 |
-| No unrelated/code changes | Pending branch validation | Pull request diff |
-| Product Owner approval before merge | Pending | Approval record |
+| No unrelated/code changes | Pass | PR #12 changed only the two intended documentation files |
+| Product Owner approval before merge | Not met — process deviation recorded | PR #12 was merged before controlled approval metadata was recorded; Section 12 records the later approval without rewriting history |
 
 ## 12. Approval record
 
 | Role | Name | Decision | Date | Conditions / notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Review and explicitly approve E00-06 before merge |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approval was expressed by merging PR #12 and recorded afterward. D-09 to D-18 remain Proposed pending their ADR reviews; no external validation is implied. |
 | Municipal domain reviewer | Unassigned | External validation required | — | D-03 and D-07 are portfolio baselines, not municipal validation |
 | Architecture reviewer | Kiarash Delavar, self-review only | Pending ADR review | — | D-09 to D-18 remain Proposed |
 | Privacy/Security/Accessibility/Legal reviewers | Unassigned | External validation required | — | Formal assurance and production/pilot claims remain unavailable |
