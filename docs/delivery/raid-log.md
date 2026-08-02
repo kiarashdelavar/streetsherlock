@@ -7,8 +7,8 @@
 | Requirement | E00-06 |
 | Sprint | Sprint 0 — Product freeze and delivery governance |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | Master Project Specification v2.0 |
 | Related evidence | Product Charter v1.0; Hero Scenario v1.0; MVP Scope v1.0; Glossary v1.0; Stakeholder/RACI baseline |
 | Last updated | 2 August 2026 |
@@ -121,6 +121,7 @@ Any risk involving personal-data exposure, authorization bypass, destructive dat
 | I-05 | Testable MVP requirement catalogue and traceability matrix are not yet baselined | High | No application coding begins from informal requirements | Complete and approve E00-05 | Product/QA | E00-05 | Open |
 | I-06 | Service blueprint, wireframes, and accessibility journey evidence are not baselined | Medium | Use approved hero flow only; no final UI claims | Complete E00-08 | UX/Product | E00-08 | Open |
 | I-07 | Architecture proposals have not yet been reviewed through ADRs | High | Keep technical decisions Proposed and do not treat the Master Specification as accepted ADR evidence | Complete Day 2 diagrams and ADR review | Engineering | Decision log D-09 to D-18 | Open |
+| I-08 | E00-06 was merged before controlled approval metadata was recorded | Medium | Preserve the deviation and correct metadata in a separate PR | Merge the E00-06 approval-cleanup PR; require explicit approval before future merges | Product Owner | PR #12 and E00-06 approval-cleanup PR | Contained |
 
 ## 10. Dependency register
 
@@ -161,7 +162,8 @@ Any risk involving personal-data exposure, authorization bypass, destructive dat
 
 | Date | Actor | Change | Evidence |
 |---|---|---|---|
-| 2026-08-02 | Kiarash Delavar / delivery agent | Created initial RAID baseline for E00-06 | Issue #11 and E00-06 pull request |
+| 2026-08-02 | Kiarash Delavar / delivery agent | Created initial RAID baseline for E00-06 | Issue #11 and PR #12 |
+| 2026-08-02 | Kiarash Delavar / delivery agent | Recorded Product Owner approval after merge and preserved the process deviation | PR #12 and E00-06 approval-cleanup PR |
 
 ## 14. Acceptance traceability
 
@@ -174,14 +176,14 @@ Any risk involving personal-data exposure, authorization bypass, destructive dat
 | Current assurance/licence/stakeholder/delivery gaps visible | Pass | Sections 9–10 |
 | Risk scoring and escalation | Pass | Sections 6 and 12 |
 | Human authority and external assurance boundary | Pass | Sections 2–3, 7–12 |
-| No unrelated/code changes | Pending branch validation | Pull request diff |
-| Product Owner approval before merge | Pending | Approval record |
+| No unrelated/code changes | Pass | PR #12 changed only the two intended documentation files |
+| Product Owner approval before merge | Not met — process deviation recorded | PR #12 was merged before controlled approval metadata was recorded; Section 15 records the later approval without rewriting history |
 
 ## 15. Approval record
 
 | Role | Name | Decision | Date | Conditions / notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Review and explicitly approve E00-06 before merge |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approval was expressed by merging PR #12 and recorded afterward. This does not approve Proposed architecture decisions or imply external validation. |
 | Municipal domain reviewer | Unassigned | External validation required | — | Required before municipal workflow claims |
 | Privacy reviewer | Unassigned | External validation required | — | Required before real personal data or privacy-compliance claims |
 | Security reviewer | Unassigned | External validation required | — | Required before security/BIO2 claims or operational pilot |
