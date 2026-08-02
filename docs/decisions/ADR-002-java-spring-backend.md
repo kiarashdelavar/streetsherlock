@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Authoritative HTTP API and background business processing |
 | Depends on | ADR-001 |
 
@@ -93,5 +93,5 @@ No exact dependency versions are approved until pinned and tested in Sprint 1. N
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Version line remains Proposed |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Security/operations reviewer | Unassigned | Pending | — | Required before deployment claims |
