@@ -6,8 +6,8 @@
 |---|---|
 | Requirement | S0-ARCH-01 |
 | Owner | Kiarash Delavar, Engineering / Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Scope tier | Portfolio demo and engineering MVP |
 | Controlled baseline | Master Project Specification v2.0; `context.md`; approved product/domain documents |
 | Related decisions | D-09 through D-18 — Proposed; future ADR-001 through ADR-010 |
@@ -155,12 +155,12 @@ Review this document for any new runtime, database, broker, cache, provider, ten
 | Replaceable providers and safe failure | Pass | Sections 4, 6 and 8 |
 | StreetPulse versus later InfraProof | Pass | Section 5 |
 | Proposed decisions not silently accepted | Pass | Sections 1–2 and 13 |
-| Product Owner approval before merge | Pending | Approval record |
+| Product Owner approval before merge | Pass | Approval record |
 
 ## 13. Approval record
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Approves the diagram baseline only |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approves the diagram baseline only |
 | Architecture reviewer | Kiarash Delavar, self-review only | Pending ADR review | — | ADR-001 through ADR-010 remain required |
 | Privacy/security/operations reviewers | Unassigned | External validation required | — | Required before relevant real-data, assurance or deployment claims |
