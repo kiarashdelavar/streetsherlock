@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering / AI-data |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Structured intake assistance, embeddings and later approved-fact drafting |
 | Depends on | Privacy boundaries, ADR-004 and ADR-008 |
 
@@ -91,5 +91,5 @@ No exact model, personal-data use, hosted provider, production inference, automa
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Provider pattern only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | AI/data, privacy, legal and security reviewers | Unassigned | Pending | — | Required before model/data promotion |
