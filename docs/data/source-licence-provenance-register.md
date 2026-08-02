@@ -4,10 +4,11 @@
 |---|---|
 | Document ID | SS-DATA-001 |
 | Work item | E00-07 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Product Owner | Kiarash Delavar |
+| Approval | Approved by Kiarash Delavar, Product Owner, on 2 August 2026 |
 | Review date | 2 August 2026 |
 | Next review | Before the first source fixture is committed and at every source/terms change |
 | Required reviewers | Product Owner self-review; independent data/licence and municipal review remain pending |
@@ -361,7 +362,7 @@ On suspected licence/provenance failure:
 
 | Review | Status | Owner / condition |
 |---|---|---|
-| Product Owner | Pending | Kiarash Delavar must approve before merge |
+| Product Owner | Approved | Kiarash Delavar, 2 August 2026 — engineering boundary only |
 | Independent data/licence | Pending | Required before public fixture redistribution or pilot |
 | Municipal domain/data owner | Pending | Required before treating any source as operationally useful |
 | Privacy | Pending | Required before personal, address-linked, media, or customer data |
