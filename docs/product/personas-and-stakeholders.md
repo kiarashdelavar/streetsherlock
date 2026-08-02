@@ -12,7 +12,7 @@
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Related product documents | [Product Charter v1.0](product-charter.md), [Hero Scenario v1.0](hero-scenario.md), [MVP Scope v1.0](mvp-scope.md), [Glossary v1.0](glossary.md) |
 | Last updated | 2 August 2026 |
-| Next review | At every scope-tier promotion or material authority/access change |
+| Next review | Whenever any material-change trigger in Section 21 occurs |
 
 ## 2. Purpose
 
@@ -441,7 +441,7 @@ Open questions must move into the central decision, assumption, RAID, or require
 | Review-gap owner, trigger, evidence, status | Pass | Section 15 |
 | Assumptions and open questions | Pass | Sections 18 and 19 |
 | Consistency with approved product documents | Pass | Sections 2–4 and terminology throughout |
-| Product Owner approval | Pass | Section 22; approval was expressed by merging PR #9, then recorded in this correction |
+| Product Owner approval before merge | Not met — process deviation recorded | PR #9 was merged before controlled approval metadata was recorded; Section 22 records the later approval without rewriting history |
 
 ## 21. Change control
 
