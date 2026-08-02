@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | StreetPulse MVP and shared InfraProof domain backend |
 | Depends on | Approved container, domain ERD and state-machine baselines |
 
@@ -93,5 +93,5 @@ No application scaffolding, cloud deployment, live integration, real data use, m
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Proposed direction only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Independent architecture reviewer | Unassigned | Pending | — | Self-review is not independent assurance |
