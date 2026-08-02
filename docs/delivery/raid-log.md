@@ -176,7 +176,7 @@ Any risk involving personal-data exposure, authorization bypass, destructive dat
 | Current assurance/licence/stakeholder/delivery gaps visible | Pass | Sections 9–10 |
 | Risk scoring and escalation | Pass | Sections 6 and 12 |
 | Human authority and external assurance boundary | Pass | Sections 2–3, 7–12 |
-| No unrelated/code changes | Pass | PR #12 changed only the two intended documentation files |
+| No unrelated/code changes | Pass | PR #12 and PR #13 changed only the intended E00-06 documentation files |
 | Product Owner approval before merge | Not met — process deviation recorded | PR #12 was merged before controlled approval metadata was recorded; Section 15 records the later approval without rewriting history |
 
 ## 15. Approval record
