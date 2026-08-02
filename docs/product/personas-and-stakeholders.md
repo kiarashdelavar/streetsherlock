@@ -7,12 +7,12 @@
 | Requirement | E00-04 |
 | Sprint | Sprint 0 — Product freeze and delivery governance |
 | Document owner | Kiarash Delavar, Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Related product documents | [Product Charter v1.0](product-charter.md), [Hero Scenario v1.0](hero-scenario.md), [MVP Scope v1.0](mvp-scope.md), [Glossary v1.0](glossary.md) |
 | Last updated | 2 August 2026 |
-| Next review | Product Owner review before merge; then at every scope-tier promotion |
+| Next review | Whenever any material-change trigger in Section 21 occurs |
 
 ## 2. Purpose
 
@@ -441,7 +441,7 @@ Open questions must move into the central decision, assumption, RAID, or require
 | Review-gap owner, trigger, evidence, status | Pass | Section 15 |
 | Assumptions and open questions | Pass | Sections 18 and 19 |
 | Consistency with approved product documents | Pass | Sections 2–4 and terminology throughout |
-| Product Owner approval before merge | Pending | Section 22 |
+| Product Owner approval before merge | Not met — process deviation recorded | PR #9 was merged before controlled approval metadata was recorded; Section 22 records the later approval without rewriting history |
 
 ## 21. Change control
 
@@ -462,7 +462,7 @@ The change must link to the issue, decision or ADR, evidence, reviewer, and affe
 
 | Role | Name | Decision | Date | Conditions/notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Review E00-04 and record an explicit approve or change decision before merge. |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approval was expressed by merging PR #9; metadata was corrected immediately afterward. No external validation is implied. |
 | Municipal service owner | Unassigned | External validation required | — | Required before municipal pilot authorization. |
 | Municipal domain lead | Unassigned | External validation required | — | Required before municipal workflow and policy claims. |
 | Privacy officer / FG delegate | Unassigned | External validation required | — | Required before lawful-basis, DPIA/FRAIA, retention, or real-data claims. |
