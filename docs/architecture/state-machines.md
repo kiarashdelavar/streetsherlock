@@ -6,8 +6,8 @@
 |---|---|
 | Requirement | S0-ARCH-01 |
 | Owner | Kiarash Delavar, Engineering / Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | Master Project Specification v2.0; approved Hero Scenario, MVP Scope and Glossary |
 | Related decisions | D-04 accepted human authority; D-16 remains Proposed implementation pending ADR-008 |
 | Last updated | 2 August 2026 |
@@ -190,12 +190,12 @@ Review state machines when a state, transition, actor, authority, evidence requi
 | Failure/retry paths visible | Pass | Sections 3, 5 and 9 |
 | Authorization/audit/concurrency tests defined | Pass | Sections 2, 8–10 |
 | MVP/later scope separated | Pass | Sections 3–7 |
-| Product Owner approval before merge | Pending | Approval record |
+| Product Owner approval before merge | Pass | Approval record |
 
 ## 14. Approval record
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Approval freezes proposed lifecycle language for requirement/ADR review |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approval freezes proposed lifecycle language for requirement/ADR review |
 | Architecture reviewer | Kiarash Delavar, self-review only | Pending ADR-008/009 review | — | No implementation authority is implied |
 | Municipal/privacy/legal reviewers | Unassigned | External validation required | — | Required before operational role, policy, retention or warranty claims |
