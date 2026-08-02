@@ -6,8 +6,8 @@
 |---|---|
 | Requirement | S0-ARCH-01 |
 | Owner | Kiarash Delavar, Engineering / Product Owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | Approved Glossary v1.0, Hero Scenario v1.0 and MVP Scope v1.0 |
 | Related decisions | D-03, D-04 and D-07 accepted product/domain boundaries; D-12, D-15, D-16 and D-18 remain Proposed |
 | Last updated | 2 August 2026 |
@@ -144,12 +144,12 @@ Review the ERD when semantics, aggregate ownership, cardinality, deletion/retent
 | InfraProof isolated from MVP | Pass | Section 5 |
 | Restricted data and deletion questions visible | Pass | Sections 7–8 |
 | Physical schema not prematurely approved | Pass | Sections 2, 6 and 9 |
-| Product Owner approval before merge | Pending | Approval record |
+| Product Owner approval before merge | Pass | Approval record |
 
 ## 12. Approval record
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Approves conceptual semantics for continued Sprint 0 work only |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approves conceptual semantics for continued Sprint 0 work only |
 | Architecture/data reviewer | Kiarash Delavar, self-review only | Pending ADR and migration review | — | Physical schema and D-12/D-18 remain Proposed |
 | Municipal/privacy/security/legal reviewers | Unassigned | External validation required | — | Required before municipal-correctness, real-data or retention claims |
