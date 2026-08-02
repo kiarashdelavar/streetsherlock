@@ -4,11 +4,11 @@
 |---|---|
 | Document ID | SS-PROD-007 |
 | Work item | E00-08 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Product Owner | Kiarash Delavar |
-| Approval | Pending explicit Product Owner approval |
+| Approval | Approved by Product Owner on 2 August 2026 |
 | Review date | 2 August 2026 |
 | Next review | Before Sprint 1 app-shell work and before each affected implementation issue |
 | Required reviewers | Product Owner self-review; independent service-design, municipal-domain, privacy, security, and accessibility review remain pending |
@@ -478,7 +478,7 @@ The full state-to-page mapping is controlled in `../accessibility/interaction-st
 
 | Role | Name | Decision | Date | Scope |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Structural wireframes and release boundary |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Structural wireframes and release boundary |
 | Municipal/service-design reviewer | Unassigned external reviewer | Pending | — | Real workflow and content |
 | Privacy/security reviewer | Unassigned external reviewer | Pending | — | Visibility, tokens, upload and recovery |
 | Accessibility reviewer | Unassigned external reviewer | Pending | — | WCAG/EN 301 549 design and test evidence |
