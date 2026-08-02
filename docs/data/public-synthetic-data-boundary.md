@@ -4,11 +4,11 @@
 |---|---|
 | Document ID | SS-DATA-002 |
 | Work item | E00-07 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Review date | 2 August 2026 |
-| Approval | Pending Product Owner approval |
+| Approval | Approved by Kiarash Delavar, Product Owner, on 2 August 2026 |
 | Related document | `docs/data/source-licence-provenance-register.md` |
 
 ## 1. Boundary decision
@@ -284,7 +284,7 @@ These are intentionally unresolved:
 
 | Decision | Reviewer | Date | Result |
 |---|---|---|---|
-| Product/data boundary | Kiarash Delavar, Product Owner | Pending | Pending |
+| Product/data boundary | Kiarash Delavar, Product Owner | 2 August 2026 | Approved — bounded portfolio design only |
 | Independent data/licence review | Unassigned | Pending | Required before redistribution/pilot |
 | Municipal validation | Unassigned | Pending | Required before operational use |
 | Privacy/security review | Unassigned | Pending | Required before controlled or personal data |
