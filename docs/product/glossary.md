@@ -6,8 +6,8 @@
 | Sprint | Sprint 0 — Product freeze and discovery |
 | Document owner | Kiarash Delavar, Product Owner |
 | Domain steward | Product Owner until a municipality assigns a domain owner |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Controlled baseline | [Master Project Specification v2.0](../MASTER_PROJECT_SPEC.md) |
 | Related documents | [Product Charter v1.0](product-charter.md), [Hero Scenario v1.0](hero-scenario.md), [MVP Scope v1.0](mvp-scope.md) |
 | Last updated | 2 August 2026 |
@@ -563,13 +563,13 @@ A work item conforms only when:
 | Canonical/prohibited terminology | Pass | Sections 2, 12, and 13 |
 | Examples and counterexamples | Pass | Section 14 |
 | External unknowns recorded | Pass | Section 15 |
-| Product Owner approval | Pending | Section 18 |
+| Product Owner approval | Pass | Section 18 |
 
 ## 18. Approval record
 
 | Role | Name | Decision | Date | Conditions/notes |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Review E00-03 and record an explicit approve or change decision. |
+| Product Owner | Kiarash Delavar | Approved | 2 August 2026 | Approved without conditions; merged PR #6 is accepted as the controlled domain-language baseline. |
 | Municipal domain representative | Unassigned | Pending external validation | — | Required before municipality-specific or pilot claims. |
 | Privacy/legal reviewer | Unassigned | Pending external validation | — | Required before personal-data or retention claims. |
 | Security reviewer | Unassigned | Pending external validation | — | Required before production-readiness claims. |
