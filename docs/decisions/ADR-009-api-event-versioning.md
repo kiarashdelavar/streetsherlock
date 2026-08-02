@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Browser/backend, adapters, FastAPI and n8n contracts |
 | Depends on | ADR-001, ADR-004, ADR-006 and state machines |
 
@@ -93,5 +93,5 @@ No public API, SLA, external consumer, broker, write-back contract or production
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Contract policy only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Integration/security/operations reviewers | Unassigned | Pending | — | Required before live consumers |
