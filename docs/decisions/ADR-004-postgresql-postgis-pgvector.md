@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering / Data |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Transactional business data, spatial queries and semantic candidate retrieval |
 | Depends on | Approved domain ERD and data-flow baseline |
 
@@ -93,5 +93,5 @@ No production database, cloud vendor, retention period, real dataset or tenant-i
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Proposed system-of-record direction |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Data/security/operations reviewers | Unassigned | Pending | — | Required before deployment or real data |
