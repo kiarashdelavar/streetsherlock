@@ -4,11 +4,11 @@
 |---|---|
 | Document ID | SS-DATA-003 |
 | Work item | E00-07 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
 | Review date | 2 August 2026 |
-| Approval | Pending Product Owner approval |
+| Approval | Approved by Kiarash Delavar, Product Owner, on 2 August 2026 |
 | Related documents | SS-DATA-001 and SS-DATA-002 |
 
 ## 1. Goal
@@ -329,7 +329,7 @@ The following belong to later issues:
 
 | Decision | Reviewer | Date | Result |
 |---|---|---|---|
-| Fixture strategy and manifest contract | Kiarash Delavar, Product Owner | Pending | Pending |
+| Fixture strategy and manifest contract | Kiarash Delavar, Product Owner | 2 August 2026 | Approved — strategy only |
 | Data/licence review | Unassigned | Pending | Required before public fixture commit/redistribution |
 | Privacy/security review | Unassigned | Pending | Required for any higher-risk source |
 | Implementation verification | Future data-adapter owner | Pending | Required when schema/scripts exist |
