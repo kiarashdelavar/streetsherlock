@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| Status | Proposed |
+| Status | Accepted |
 | Date | 2 August 2026 |
 | Decision owner | Kiarash Delavar, Engineering |
-| Target review | 3 August 2026 |
+| Decision date | 2 August 2026 |
 | Scope | Uploaded originals, derived/redacted media, overlays and PDFs |
 | Depends on | Approved data-flow baseline and ADR-004 |
 
@@ -93,5 +93,5 @@ No provider, bucket, public media, retention period, encryption/KMS product or r
 
 | Role | Name | Decision | Date | Notes |
 |---|---|---|---|---|
-| Product Owner / Engineering | Kiarash Delavar | Pending | — | Storage pattern only |
+| Product Owner / Engineering | Kiarash Delavar | Accepted | 2 August 2026 | Engineering direction approved; implementation and external assurance remain gated |
 | Privacy/security/operations reviewers | Unassigned | Pending | — | Required before real media |
