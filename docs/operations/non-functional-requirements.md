@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Document ID | OPS-NFR-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar, Product Owner |
-| Approval | Pending |
+| Approval | Product Owner approved 3 August 2026 |
 | Scope | Sprint 0 quality baseline for StreetSherlock |
 | Controls | Master Project Specification §§19, 20, 36, 39, 43–45 |
 | Related | SEC-TM-001, PRIV-DC-001, ADR-001–ADR-010 |
@@ -163,7 +163,7 @@ Requires separate customer-approved SLOs, capacity, identity, hosting, retention
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Sprint 0 NFR structure and hypotheses |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 NFR structure, measurable hypotheses and evidence obligations only |
 | Platform/SRE reviewer | Pending | — | Operability, capacity and recovery |
 | Security reviewer | Pending | — | Security requirements |
 | Privacy officer / FG | Pending | — | Personal-data lifecycle |
