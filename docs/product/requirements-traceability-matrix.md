@@ -3,11 +3,11 @@
 | Field | Value |
 |---|---|
 | Document ID | PROD-TRACE-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
-| Approval | Pending Product Owner review |
-| Catalogue | PROD-REQ-001 v0.1 |
+| Approval | Product Owner approved — 3 August 2026 |
+| Catalogue | PROD-REQ-001 v1.0 |
 | Last updated | 3 August 2026 |
 
 ## 1. Purpose
@@ -257,7 +257,7 @@ Screenshots alone are not sufficient evidence for security, privacy, data integr
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Sprint 0 trace structure, coverage and planned verification |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 trace structure, coverage and planned verification only; implementation evidence, release acceptance and external assurance remain pending |
 | Municipal domain owner | Pending | — | municipal requirement correctness |
 | Privacy officer / FG | Pending | — | privacy requirement and lifecycle trace |
 | Security reviewer | Pending | — | threat/control/test trace |
