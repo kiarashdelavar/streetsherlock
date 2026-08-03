@@ -3,13 +3,13 @@
 | Field | Value |
 |---|---|
 | Document ID | PRIV-DC-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar — Product Owner / solo delivery |
 | Review cadence | Every sprint and after a purpose, data category, role, provider, model, integration, retention, publication, tenant or environment change |
 | Controlled source | `requirements/StreetSherlock-Master-Project-Prompt.md` |
 | Related issue | #24 |
-| Approval | Pending Product Owner approval |
+| Approval | Product Owner approved — 3 August 2026 |
 | Independent review | Privacy Officer / Functionaris Gegevensbescherming (FG), municipal controller, legal, security and domain reviews pending |
 
 ## 1. Purpose and claim boundary
@@ -399,11 +399,11 @@ Any new data category, purpose, recipient, provider, model, export, public view,
 
 | Role | Name | Decision | Date | Scope |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Sprint 0 privacy structure and design obligations only |
+| Product Owner | Kiarash Delavar | Approved | 3 August 2026 | Sprint 0 privacy structure, classification, boundaries and design obligations only |
 | Privacy Officer / FG | Unassigned | Pending | — | GDPR roles, necessity, proportionality, DPIA, rights and retention |
 | Municipal controller/domain owner | Unassigned | Pending | — | Purposes, lawful basis, operations and records schedule |
 | Legal/procurement reviewer | Unassigned | Pending | — | Contracts, providers, transfers and later warranty processing |
 | Independent security reviewer | Unassigned | Pending | — | Technical privacy and access controls |
 | Accessibility reviewer | Unassigned | Pending | — | Accessible notices, choices and rights journeys |
 
-Product Owner approval will not complete a DPIA, choose a lawful basis, approve retention, authorize providers or real data, close external review, or permit deployment.
+Product Owner approval confirms the Sprint 0 privacy structure, classifications, boundaries and design obligations only. It does not complete a DPIA, choose a lawful basis, approve retention, authorize providers or real data, close external review, or permit deployment.
