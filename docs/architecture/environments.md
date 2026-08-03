@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Document ID | ARCH-ENV-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
-| Approval | Pending |
+| Approval | Product Owner approved 3 August 2026 |
 | Scope | Environment purpose, data, access, side effects and promotion |
 
 ## 1. Decision boundary
@@ -216,7 +216,7 @@ Requires a separate operational authorization and repeated evidence. Shadow Pilo
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Sprint 0 environment boundaries and gates |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 environment boundaries and approval gates only |
 | Platform/SRE | Pending | — | topology, configuration and promotion |
 | Security reviewer | Pending | — | network, identity, secrets and isolation |
 | Privacy officer / FG | Pending | — | data, telemetry and location/processor choices |
