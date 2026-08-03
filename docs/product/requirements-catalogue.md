@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Document ID | PROD-REQ-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
-| Approval | Pending Product Owner review |
+| Approval | Product Owner approved — 3 August 2026 |
 | Scope | StreetPulse Portfolio Demo MVP plus explicitly labelled later-release InfraProof concepts |
 | Last updated | 3 August 2026 |
 
@@ -155,7 +155,7 @@ Rules:
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Sprint 0 catalogue baseline |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 catalogue baseline only; implementation, verification, compliance, deployment and external assurance remain pending |
 | Municipal domain owner | Pending | — | municipal workflow and policy |
 | Privacy officer / FG | Pending | — | privacy lifecycle and lawful processing |
 | Security reviewer | Pending | — | security obligations and threat coverage |
