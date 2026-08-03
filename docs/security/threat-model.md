@@ -3,13 +3,13 @@
 | Field | Value |
 |---|---|
 | Document ID | SEC-TM-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar — Product Owner / solo delivery |
 | Review cadence | Every sprint and after architecture, data-flow, identity, provider, model, deployment, or trust-boundary change |
 | Controlled source | `requirements/StreetSherlock-Master-Project-Prompt.md` |
 | Related issue | #22 |
-| Approval | Pending Product Owner review |
+| Approval | Product Owner approved — 3 August 2026 |
 | Independent review | Municipal security, privacy/FG, legal, accessibility and domain reviews pending |
 
 ## 1. Purpose and claim boundary
@@ -323,7 +323,7 @@ Any new entry point, role, provider, data class, external side effect, model, de
 
 | Role | Name | Decision | Date | Scope |
 |---|---|---|---|---|
-| Product Owner | Kiarash Delavar | Pending | — | Sprint 0 threat-model structure only |
+| Product Owner | Kiarash Delavar | Approved | 3 August 2026 | Sprint 0 threat-model structure, threat coverage, control obligations and verification backlog only |
 | Independent security reviewer | Unassigned | Pending | — | Architecture and implementation security |
 | Privacy officer / FG | Unassigned | Pending | — | Personal-data processing and DPIA |
 | Municipal/domain owner | Unassigned | Pending | — | Roles, operations and risk acceptance |
