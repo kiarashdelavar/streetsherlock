@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Document ID | OPS-BR-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
-| Approval | Pending |
+| Approval | Product Owner approved 3 August 2026 |
 | Scope | Sprint 0 assumptions and future evidence obligations |
 
 ## 1. Purpose and limitations
@@ -201,7 +201,7 @@ Tiering is a recovery order hypothesis, not a customer priority promise.
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Sprint 0 recovery assumptions and test obligations |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 recovery assumptions and verification obligations only |
 | Platform/SRE | Pending | — | backup architecture and exercises |
 | Security reviewer | Pending | — | confidentiality, integrity and key custody |
 | Privacy officer / FG | Pending | — | retention, deletion and restored personal data |
