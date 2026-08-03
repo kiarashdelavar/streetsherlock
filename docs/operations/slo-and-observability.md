@@ -3,10 +3,10 @@
 | Field | Value |
 |---|---|
 | Document ID | OPS-SLO-001 |
-| Version | 0.1 |
-| Status | Proposed |
+| Version | 1.0 |
+| Status | Approved |
 | Owner | Kiarash Delavar |
-| Approval | Pending |
+| Approval | Product Owner approved 3 August 2026 |
 | Scope | Portfolio Demo hypotheses; not production SLA |
 
 ## 1. Purpose
@@ -153,7 +153,7 @@ Each must state detection, user impact, safe degradation, diagnosis, containment
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|
-| Product Owner | Pending | — | Portfolio SLI/SLO hypotheses and observability boundary |
+| Product Owner | Approved | 3 August 2026 | Sprint 0 SLI/SLO hypotheses and observability boundaries only |
 | Platform/SRE | Pending | — | Measurement and response design |
 | Security reviewer | Pending | — | security signals and exposure alerts |
 | Privacy officer / FG | Pending | — | telemetry content/processor choices |
