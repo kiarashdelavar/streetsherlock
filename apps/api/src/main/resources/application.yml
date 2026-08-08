@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: streetsherlock-api
+
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+
+streetsherlock:
+  environment: ${APP_ENVIRONMENT:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never

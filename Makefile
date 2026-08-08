@@ -1,4 +1,4 @@
-.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset
+.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset api-test api-run
 
 bootstrap:
 	@bash scripts/bootstrap.sh
@@ -29,3 +29,9 @@ db-down:
 
 db-reset:
 	@bash scripts/database.sh reset
+
+api-test:
+	@mvn -f apps/api/pom.xml test
+
+api-run:
+	@mvn -f apps/api/pom.xml spring-boot:run
