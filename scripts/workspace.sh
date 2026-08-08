@@ -7,10 +7,12 @@ cd "$ROOT_DIR"
 run_lint() {
   bash -n scripts/*.sh
   bash scripts/test-structure.sh
+  docker compose --env-file .env.example config --quiet
 }
 
 run_test() {
   bash scripts/test-tooling.sh
+  bash scripts/test-database-contract.sh
 }
 
 run_build() {
@@ -25,4 +27,3 @@ case "${1:-}" in
   check) run_lint; run_test; run_build ;;
   *) printf 'Usage: %s {lint|test|build|check}\n' "$0" >&2; exit 64 ;;
 esac
-
