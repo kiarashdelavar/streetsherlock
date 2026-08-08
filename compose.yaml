@@ -1,0 +1,42 @@
+name: streetsherlock
+
+services:
+  database:
+    build:
+      context: .
+      dockerfile: infra/database/Dockerfile
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-streetsherlock}
+      POSTGRES_USER: ${POSTGRES_USER:-streetsherlock}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-only-change-me}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - streetsherlock_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-streetsherlock} -d ${POSTGRES_DB:-streetsherlock}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  flyway:
+    image: flyway/flyway:11.8.2
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      FLYWAY_URL: jdbc:postgresql://database:5432/${POSTGRES_DB:-streetsherlock}
+      FLYWAY_USER: ${POSTGRES_USER:-streetsherlock}
+      FLYWAY_PASSWORD: ${POSTGRES_PASSWORD:-local-only-change-me}
+      FLYWAY_CONNECT_RETRIES: "20"
+      FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
+      FLYWAY_CLEAN_DISABLED: "true"
+    volumes:
+      - ./infra/database/migrations:/flyway/sql:ro
+    profiles: ["tools"]
+
+volumes:
+  streetsherlock_postgres:
+    name: streetsherlock_postgres
