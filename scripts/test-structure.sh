@@ -3,8 +3,12 @@ set -euo pipefail
 
 required=(
   .tool-versions .nvmrc .node-version .python-version .sdkmanrc
-  package.json pnpm-lock.yaml pnpm-workspace.yaml
+  .env.example compose.yaml package.json pnpm-lock.yaml pnpm-workspace.yaml
+  infra/database/Dockerfile
+  infra/database/migrations/V1__enable_required_extensions.sql
+  infra/database/migrations/V2__create_application_schema.sql
   scripts/versions.env scripts/verify-tools.sh scripts/bootstrap.sh
+  scripts/database.sh scripts/verify-database.sh scripts/test-database-contract.sh
   apps/web/README.md apps/api/README.md apps/vision/README.md
 )
 
@@ -15,4 +19,3 @@ done
 grep -q '"private": true' package.json
 grep -q 'pnpm@10.13.1' package.json
 printf 'ARCH-TOOL-001: workspace structure passed.\n'
-
