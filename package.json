@@ -4,17 +4,15 @@
   "private": true,
   "description": "StreetSherlock Local/CI engineering workspace",
   "packageManager": "pnpm@10.13.1",
-  "engines": {
-    "node": "22.18.0",
-    "pnpm": "10.13.1"
-  },
+  "engines": { "node": "22.18.0", "pnpm": "10.13.1" },
   "scripts": {
     "bootstrap": "bash scripts/bootstrap.sh",
     "doctor": "bash scripts/verify-tools.sh",
     "lint": "bash scripts/workspace.sh lint",
     "test": "bash scripts/workspace.sh test",
     "build": "bash scripts/workspace.sh build",
-    "check": "bash scripts/workspace.sh check"
+    "check": "bash scripts/workspace.sh check",
+    "web:dev": "pnpm --filter @streetsherlock/web dev",
+    "web:test": "pnpm --filter @streetsherlock/web test"
   }
 }
-
