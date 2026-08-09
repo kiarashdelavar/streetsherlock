@@ -8,16 +8,16 @@ run_lint() {
   bash -n scripts/*.sh
   bash scripts/test-structure.sh
   docker compose --env-file .env.example config --quiet
+  pnpm --filter @streetsherlock/web lint
 }
-
 run_test() {
   bash scripts/test-tooling.sh
   bash scripts/test-database-contract.sh
+  pnpm --filter @streetsherlock/web test
 }
-
 run_build() {
   pnpm install --offline --frozen-lockfile --ignore-scripts
-  printf 'Workspace build contract passed; component builds arrive in E01-03..05.\n'
+  pnpm --filter @streetsherlock/web build
 }
 
 case "${1:-}" in
