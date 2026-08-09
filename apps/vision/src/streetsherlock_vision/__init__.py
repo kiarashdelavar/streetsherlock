@@ -1,0 +1,1 @@
+"""StreetSherlock vision contract stub."""
