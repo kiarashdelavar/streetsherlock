@@ -13,7 +13,10 @@ required=(
   apps/api/src/main/resources/application.yml
   apps/api/src/test/java/nl/streetsherlock/ArchitectureBoundaryTest.java
   apps/api/src/test/java/nl/streetsherlock/ApiSmokeTest.java
-  apps/vision/README.md
+  apps/vision/README.md apps/vision/pyproject.toml
+  apps/vision/src/streetsherlock_vision/main.py
+  apps/vision/tests/test_contract.py
+  docs/operations/local-vision.md
 )
 
 for path in "${required[@]}"; do
@@ -24,4 +27,6 @@ grep -q '"private": true' package.json
 grep -q 'pnpm@10.13.1' package.json
 grep -q '<version>3.5.4</version>' apps/api/pom.xml
 grep -q 'anyRequest().denyAll()' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
+grep -q 'fastapi==0.116.1' apps/vision/pyproject.toml
+grep -q 'vision_not_implemented' apps/vision/src/streetsherlock_vision/main.py
 printf 'ARCH-TOOL-001: workspace structure passed.\n'

@@ -1,4 +1,4 @@
-.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset api-test api-run web-test web-build web-run
+.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset api-test api-run web-test web-build web-run vision-lint vision-test vision-run
 
 bootstrap:
 	@bash scripts/bootstrap.sh
@@ -30,3 +30,9 @@ web-build:
 	@pnpm --filter @streetsherlock/web build
 web-run:
 	@pnpm --filter @streetsherlock/web dev
+vision-lint:
+	@python -m ruff check apps/vision
+vision-test:
+	@python -m pytest apps/vision
+vision-run:
+	@python -m uvicorn streetsherlock_vision.main:app --app-dir apps/vision/src --host 127.0.0.1 --port 8001
