@@ -37,8 +37,8 @@ def readiness(settings: Annotated[Settings, Depends(get_settings)]) -> Readiness
 
 
 def require_internal_authorization(
+    settings: Annotated[Settings, Depends(get_settings)],
     authorization: Annotated[str | None, Header()] = None,
-    settings: Annotated[Settings, Depends(get_settings)] = None,
 ) -> None:
     if not settings.ready:
         raise HTTPException(
@@ -46,7 +46,11 @@ def require_internal_authorization(
             detail={"code": "not_ready", "message": "Required vision configuration is unavailable."},
         )
 
-    expected = f"Bearer {settings.internal_token.get_secret_value()}"
+    token = settings.internal_token
+    if token is None:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+    expected = f"Bearer {token.get_secret_value()}"
     if authorization is None or not compare_digest(authorization, expected):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -58,10 +62,7 @@ def require_internal_authorization(
 @app.post(
     "/v1/vision/analyze",
     dependencies=[Depends(require_internal_authorization)],
-    responses={
-        501: {"model": ErrorResponse},
-        503: {"model": ErrorResponse},
-    },
+    responses={501: {"model": ErrorResponse}, 503: {"model": ErrorResponse}},
     tags=["vision"],
 )
 def analyze_stub(_: AnalyzeRequest) -> JSONResponse:
