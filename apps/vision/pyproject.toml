@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "streetsherlock-vision"
 version = "0.1.0"
 description = "Synthetic Local/CI FastAPI contract stub"
-requires-python = "==3.12.11"
+requires-python = ">=3.12.10,<3.13"
 dependencies = [
   "fastapi==0.116.1",
   "pydantic-settings==2.10.1",

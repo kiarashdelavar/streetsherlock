@@ -31,7 +31,10 @@ def readiness(settings: Annotated[Settings, Depends(get_settings)]) -> Readiness
     if not settings.ready:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail={"code": "not_ready", "message": "Required vision configuration is unavailable."},
+            detail={
+    "code": "not_ready",
+    "message": "Required vision configuration is unavailable.",
+},
         )
     return ReadinessResponse()
 
@@ -43,7 +46,10 @@ def require_internal_authorization(
     if not settings.ready:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail={"code": "not_ready", "message": "Required vision configuration is unavailable."},
+            detail={
+    "code": "not_ready",
+    "message": "Required vision configuration is unavailable.",
+},
         )
 
     token = settings.internal_token
