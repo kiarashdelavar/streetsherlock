@@ -1,0 +1,56 @@
+{
+  "realm": "streetsherlock-dev",
+  "enabled": true,
+  "displayName": "StreetSherlock synthetic local identity",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": false,
+  "loginWithEmailAllowed": false,
+  "roles": {
+    "realm": [
+      {"name": "intake_employee", "description": "Read synthetic intake demo resources"},
+      {"name": "supervisor", "description": "Supervise synthetic intake demo resources"},
+      {"name": "auditor", "description": "Inspect synthetic identity context only"},
+      {"name": "unauthorized", "description": "Negative-test role with no protected access"}
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "streetsherlock-local-cli",
+      "name": "StreetSherlock local-only test client",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": false,
+      "serviceAccountsEnabled": false
+    }
+  ],
+  "users": [
+    {
+      "username": "demo-intake",
+      "enabled": true,
+      "emailVerified": false,
+      "realmRoles": ["intake_employee"],
+      "credentials": [
+        {"type": "password", "value": "local-intake-change-me", "temporary": false}
+      ]
+    },
+    {
+      "username": "demo-auditor",
+      "enabled": true,
+      "emailVerified": false,
+      "realmRoles": ["auditor"],
+      "credentials": [
+        {"type": "password", "value": "local-auditor-change-me", "temporary": false}
+      ]
+    },
+    {
+      "username": "demo-unauthorized",
+      "enabled": true,
+      "emailVerified": false,
+      "realmRoles": ["unauthorized"],
+      "credentials": [
+        {"type": "password", "value": "local-unauthorized-change-me", "temporary": false}
+      ]
+    }
+  ]
+}
