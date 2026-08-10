@@ -1,6 +1,6 @@
 # StreetSherlock
 
-StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, and E01-05 adds the disabled FastAPI vision contract. Real data, a public demo, pilot, AI processing, and production use remain unauthorized.
+StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, and E01-06 adds the deny-by-default OIDC/dev identity boundary. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
 
 ## Prerequisites
 
@@ -24,9 +24,10 @@ make db-up
 make db-verify
 ```
 
-Backend:
+Backend and local dev identity:
 
 ```bash
+docker compose --profile identity up -d identity
 export APP_ENVIRONMENT=local
 make api-test
 make api-run
@@ -53,7 +54,7 @@ make vision-test
 make vision-run
 ```
 
-Open `http://127.0.0.1:3000`; API health is at `http://127.0.0.1:8080/actuator/health`; vision liveness is at `http://127.0.0.1:8001/v1/health/live`. These foundations run independently and no cross-service business flow is claimed.
+Open `http://127.0.0.1:3000`; API health is at `http://127.0.0.1:8080/actuator/health`; local identity is at `http://127.0.0.1:8180`; vision liveness is at `http://127.0.0.1:8001/v1/health/live`. These foundations run independently and no cross-service business flow is claimed.
 
 Windows PowerShell commands are in [local web operations](docs/operations/local-web.md), [local API operations](docs/operations/local-api.md), [local database operations](docs/operations/local-database.md), and [local vision operations](docs/operations/local-vision.md).
 
@@ -71,18 +72,20 @@ Windows PowerShell commands are in [local web operations](docs/operations/local-
 ## Monorepo boundary
 
 - `apps/web` — Next.js accessible shell.
-- `apps/api` — Spring Boot modular-monolith shell.
+- `apps/api` — Spring Boot modular-monolith and OIDC authorization boundary.
 - `apps/vision` — FastAPI health/readiness and disabled contract stub.
 - `packages/contracts` — reserved for generated/versioned contracts.
 - `infra/database` — database image and versioned migrations.
+- `infra/identity` — synthetic local-only Keycloak realm; never a production IdP configuration.
 
-PostgreSQL is the future authoritative business-state store. Workflow, AI, telemetry, vision tooling, and workspace tooling are never business sources of truth.
+PostgreSQL is the future authoritative business-state store. Workflow, AI, telemetry, vision tooling, identity infrastructure, and workspace tooling are never business sources of truth.
 
 ## Evidence and limitations
 
 - `ARCH-TOOL-001`, `CLONE-001..002`, `ARCH-MOD-001..004`, and `API-SMOKE-001` cover the earlier foundation slices.
 - `A11Y-SHELL-001..006` and `WEB-SMOKE-001` cover semantic shell behavior and rendering.
 - `API-VISION-001..004` and `ARCH-AUTH-002` cover versioned health, fail-closed readiness, strict refusal, and authorization denial.
-- Docker-backed database evidence and manual keyboard/browser checks must be run in their stated environments; neither is inferred from static checks.
+- `AUTH-MATRIX-001`, `AUTH-IDOR-001..008`, and `SEC-CONFIG-001` cover the synthetic OIDC role boundary; see [E01-06 authorization evidence](docs/testing/e01-06-authorization.md).
+- Docker-backed identity/database evidence and manual keyboard/browser checks must be run in their stated environments; neither is inferred from static checks.
 - No real, personal, municipal, KLIC, image, model, or unverified third-party data is included.
-- No production, compliance, availability, AI, security, privacy, backup, or accessibility-conformance claim is made.
+- No production, compliance, availability, AI, security, privacy, backup, identity-provider, or accessibility-conformance claim is made.
