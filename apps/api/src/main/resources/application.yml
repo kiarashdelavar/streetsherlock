@@ -1,6 +1,11 @@
 spring:
   application:
     name: streetsherlock-api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${OIDC_JWK_SET_URI:http://127.0.0.1:8180/realms/streetsherlock-dev/protocol/openid-connect/certs}
 
 server:
   address: ${SERVER_ADDRESS:127.0.0.1}
