@@ -21,8 +21,8 @@ class ConfigurationFailureTest {
     @Test
     void demoEnvironmentCannotSilentlyUseLocalIdentity() {
         assertThatThrownBy(() -> new SpringApplicationBuilder(StreetSherlockApplication.class)
-                .web(WebApplicationType.NONE)
                 .properties(
+                        "server.port=0",
                         "streetsherlock.environment=demo",
                         "spring.security.oauth2.resourceserver.jwt.jwk-set-uri="
                                 + "http://127.0.0.1:8180/realms/streetsherlock-dev/"
