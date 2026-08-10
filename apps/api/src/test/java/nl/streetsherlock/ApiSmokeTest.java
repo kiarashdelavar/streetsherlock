@@ -22,7 +22,8 @@ class ApiSmokeTest {
     void API_SMOKE_001_healthIsMinimalAndUnknownRoutesFailClosed() throws Exception {
         mockMvc.perform(get("/actuator/health"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith("application/json"))
+                .andExpect(content().contentTypeCompatibleWith(
+                        "application/vnd.spring-boot.actuator.v3+json"))
                 .andExpect(jsonPath("$.status").value("UP"));
 
         mockMvc.perform(get("/api/incidents"))

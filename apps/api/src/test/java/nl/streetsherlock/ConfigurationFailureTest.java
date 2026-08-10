@@ -12,22 +12,21 @@ class ConfigurationFailureTest {
     void missingEnvironmentFailsClosedWithActionableConfigurationError() {
         assertThatThrownBy(() -> new SpringApplicationBuilder(StreetSherlockApplication.class)
                 .web(WebApplicationType.NONE)
-                .properties("streetsherlock.environment=")
-                .run()
+                .run("--streetsherlock.environment=")
                 .close())
-                .hasMessageContaining("Unable to bind");
+                .hasStackTraceContaining("Binding validation errors on streetsherlock")
+                .hasStackTraceContaining("must not be blank");
     }
 
     @Test
     void demoEnvironmentCannotSilentlyUseLocalIdentity() {
         assertThatThrownBy(() -> new SpringApplicationBuilder(StreetSherlockApplication.class)
-                .properties(
-                        "server.port=0",
-                        "streetsherlock.environment=demo",
-                        "spring.security.oauth2.resourceserver.jwt.jwk-set-uri="
+                .run(
+                        "--server.port=0",
+                        "--streetsherlock.environment=demo",
+                        "--spring.security.oauth2.resourceserver.jwt.jwk-set-uri="
                                 + "http://127.0.0.1:8180/realms/streetsherlock-dev/"
                                 + "protocol/openid-connect/certs")
-                .run()
                 .close())
                 .hasRootCauseMessage(
                         "Local dev identity is forbidden outside local/test; "
