@@ -37,6 +37,24 @@ services:
       - ./infra/database/migrations:/flyway/sql:ro
     profiles: ["tools"]
 
+  identity:
+    image: quay.io/keycloak/keycloak:26.3.2
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: local-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: local-only-change-me
+    ports:
+      - "127.0.0.1:${OIDC_PORT:-8180}:8080"
+    volumes:
+      - ./infra/identity/streetsherlock-dev-realm.json:/opt/keycloak/data/import/streetsherlock-dev-realm.json:ro
+    profiles: ["identity"]
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000; echo -e 'GET /health/ready HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n' >&3; grep 'HTTP/1.1 200 OK' <&3"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
 volumes:
   streetsherlock_postgres:
     name: streetsherlock_postgres
