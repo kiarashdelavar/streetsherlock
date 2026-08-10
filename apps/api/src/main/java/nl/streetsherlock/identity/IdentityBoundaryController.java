@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api")
-final class IdentityBoundaryController {
+class IdentityBoundaryController {
 
     private static final String SEEDED_INCIDENT_ID = "demo-incident-001";
 
