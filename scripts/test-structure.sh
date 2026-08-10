@@ -26,7 +26,8 @@ done
 grep -q '"private": true' package.json
 grep -q 'pnpm@10.13.1' package.json
 grep -q '<version>3.5.4</version>' apps/api/pom.xml
-grep -q 'anyRequest().denyAll()' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
+grep -q 'anyRequest().authenticated()' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
+grep -q 'oauth2ResourceServer' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
 grep -q 'fastapi==0.116.1' apps/vision/pyproject.toml
 grep -q 'vision_not_implemented' apps/vision/src/streetsherlock_vision/main.py
 printf 'ARCH-TOOL-001: workspace structure passed.\n'
