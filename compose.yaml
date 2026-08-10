@@ -42,7 +42,8 @@ services:
     command: ["start-dev", "--import-realm"]
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: local-admin
-      KC_BOOTSTRAP_ADMIN_PASSWORD: local-only-change-me\n      KC_HEALTH_ENABLED: "true"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: local-only-change-me
+      KC_HEALTH_ENABLED: "true"
     ports:
       - "127.0.0.1:${OIDC_PORT:-8180}:8080"
     volumes:
