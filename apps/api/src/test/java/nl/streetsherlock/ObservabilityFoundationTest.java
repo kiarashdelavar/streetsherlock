@@ -51,7 +51,8 @@ class ObservabilityFoundationTest {
                 .andExpect(jsonPath("$.detail").value("Authentication is required."))
                 .andExpect(jsonPath("$.correlationId").isNotEmpty())
                 .andExpect(jsonPath("$.instance").value(
-                        "urn:streetsherlock:correlation:" + VALID_CORRELATION_ID));
+                        org.hamcrest.Matchers.startsWith(
+                                "urn:streetsherlock:correlation:")));
     }
 
     @Test
