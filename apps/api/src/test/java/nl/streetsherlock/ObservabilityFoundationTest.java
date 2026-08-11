@@ -3,7 +3,7 @@ package nl.streetsherlock;
 import java.util.List;
 import java.util.Map;
 
-import nl.streetsherlock.shared.web.CorrelationIdFilter;
+import nl.streetsherlock.config.CorrelationIdFilter;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
