@@ -35,7 +35,7 @@ Starting without `APP_ENVIRONMENT` fails closed with a validation error. Maven 3
 - `ARCH-MOD-001..004` reject existing forbidden dependencies.
 - `API-SMOKE-001` checks minimal health output and deny-by-default routing.
 - `AUTH-MATRIX-001`, `AUTH-IDOR-001..008`, and `SEC-CONFIG-001` test anonymous, role-negative, unknown-resource, and authorized behavior.
-- `API-ERR-001..005` verify safe problem details and UUID correlation behavior.
+- `API-ERR-001..006` verify safe problem details and UUID correlation behavior.
 - `PRIV-TEL-001..006` verify request logs contain only method, route template, status and correlation ID—not query strings, bodies, headers, identifiers or exception text.
 - `RES-HEALTH-001` verifies separate minimal liveness and readiness probes.
 - Failure responses use `application/problem+json` and every response carries `X-Correlation-ID`.
