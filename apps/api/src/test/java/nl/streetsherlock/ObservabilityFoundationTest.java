@@ -8,16 +8,21 @@ import nl.streetsherlock.config.CorrelationIdFilter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.availability.AvailabilityChangeEvent;
+import org.springframework.boot.availability.ReadinessState;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -33,6 +38,9 @@ class ObservabilityFoundationTest {
 
     @Autowired
     MockMvc mockMvc;
+
+    @Autowired
+    ConfigurableApplicationContext applicationContext;
 
     @Test
     void API_ERR_001_unauthorizedResponseIsSafeProblemDetails() throws Exception {
@@ -99,6 +107,17 @@ class ObservabilityFoundationTest {
     }
 
     @Test
+    void API_ERR_006_unsupportedMethodIsSafeProblemDetails() throws Exception {
+        mockMvc.perform(post("/api/identity/me").with(jwt()).with(csrf()))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
+                .andExpect(jsonPath("$.status").value(405))
+                .andExpect(jsonPath("$.detail").value("The request method is not supported."))
+                .andExpect(jsonPath("$.correlationId").isNotEmpty())
+                .andExpect(jsonPath("$.instance").doesNotExist());
+    }
+
+    @Test
     void PRIV_TEL_001_006_logsExcludeQueryAndSensitiveValues(CapturedOutput output)
             throws Exception {
         String restrictedValue = "synthetic-secret@example.invalid";
@@ -129,5 +148,24 @@ class ObservabilityFoundationTest {
                         "application/vnd.spring-boot.actuator.v3+json"))
                 .andExpect(jsonPath("$.status").value("UP"))
                 .andExpect(jsonPath("$.components").doesNotExist());
+
+        try {
+            AvailabilityChangeEvent.publish(
+                    applicationContext,
+                    ReadinessState.REFUSING_TRAFFIC);
+
+            mockMvc.perform(get("/actuator/health/readiness"))
+                    .andExpect(status().isServiceUnavailable())
+                    .andExpect(jsonPath("$.status").value("OUT_OF_SERVICE"))
+                    .andExpect(jsonPath("$.components").doesNotExist());
+
+            mockMvc.perform(get("/actuator/health/liveness"))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.status").value("UP"));
+        } finally {
+            AvailabilityChangeEvent.publish(
+                    applicationContext,
+                    ReadinessState.ACCEPTING_TRAFFIC);
+        }
     }
 }
