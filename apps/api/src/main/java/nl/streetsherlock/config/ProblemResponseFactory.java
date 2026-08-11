@@ -22,10 +22,12 @@ public class ProblemResponseFactory {
     }
 
     public ProblemDetail create(HttpStatus status, HttpServletRequest request) {
+        String correlationId = correlationId(request);
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(status, safeDetail(status));
         problem.setType(URI.create("about:blank"));
         problem.setTitle(status.getReasonPhrase());
-        problem.setProperty("correlationId", correlationId(request));
+        problem.setInstance(URI.create("urn:streetsherlock:correlation:" + correlationId));
+        problem.setProperty("correlationId", correlationId);
         return problem;
     }
 
