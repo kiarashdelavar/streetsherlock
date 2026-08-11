@@ -16,6 +16,7 @@ import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -70,9 +71,7 @@ class ObservabilityFoundationTest {
         String restrictedIdentifier = "citizen-email-example-com";
 
         mockMvc.perform(get("/api/demo/incidents/{incidentId}", restrictedIdentifier)
-                        .with(jwt().jwt(token -> token.claim(
-                                "realm_access",
-                                Map.of("roles", List.of("supervisor"))))))
+                        .with(jwt().authorities(new SimpleGrantedAuthority("ROLE_SUPERVISOR"))))
                 .andExpect(status().isNotFound())
                 .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(404))
@@ -114,7 +113,7 @@ class ObservabilityFoundationTest {
                 .andExpect(jsonPath("$.status").value(405))
                 .andExpect(jsonPath("$.detail").value("The request method is not supported."))
                 .andExpect(jsonPath("$.correlationId").isNotEmpty())
-                .andExpect(jsonPath("$.instance").doesNotExist());
+                .andExpect(jsonPath("$.instance").value("/api/identity/me"));
     }
 
     @Test
