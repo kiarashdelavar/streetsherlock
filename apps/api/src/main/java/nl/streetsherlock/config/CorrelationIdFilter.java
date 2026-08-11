@@ -45,8 +45,8 @@ public class CorrelationIdFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } finally {
             LOGGER.info(
-                    "{{\"event\":\"http_request\",\"method\":\"{}\",\"route\":\"{}\","
-                            + "\"status\":{},\"correlation_id\":\"{}\"}}",
+                    "{\"event\":\"http_request\",\"method\":\"{}\",\"route\":\"{}\","
+                            + "\"status\":{},\"correlation_id\":\"{}\"}",
                     request.getMethod(),
                     routeTemplate(request),
                     response.getStatus(),
