@@ -2,16 +2,21 @@ package nl.streetsherlock.shared.web;
 
 import jakarta.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.ProblemDetail;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.context.request.ServletWebRequest;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @RestControllerAdvice
-class ApiProblemHandler {
+class ApiProblemHandler extends ResponseEntityExceptionHandler {
 
     private final ProblemResponseFactory problems;
 
@@ -19,15 +24,22 @@ class ApiProblemHandler {
         this.problems = problems;
     }
 
-    @ExceptionHandler(ResponseStatusException.class)
-    ProblemDetail responseStatus(ResponseStatusException exception, HttpServletRequest request) {
-        HttpStatus status = HttpStatus.resolve(exception.getStatusCode().value());
-        return problems.create(status == null ? HttpStatus.INTERNAL_SERVER_ERROR : status, request);
-    }
+    @Override
+    protected ResponseEntity<Object> handleExceptionInternal(
+            Exception exception,
+            Object body,
+            HttpHeaders headers,
+            HttpStatusCode statusCode,
+            WebRequest webRequest) {
+        HttpServletRequest request = ((ServletWebRequest) webRequest).getRequest();
+        HttpStatus status = HttpStatus.resolve(statusCode.value());
+        ProblemDetail problem = problems.create(
+                status == null ? HttpStatus.INTERNAL_SERVER_ERROR : status,
+                request);
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    ProblemDetail invalidRequest(HttpServletRequest request) {
-        return problems.create(HttpStatus.BAD_REQUEST, request);
+        HttpHeaders safeHeaders = new HttpHeaders();
+        safeHeaders.setContentType(MediaType.APPLICATION_PROBLEM_JSON);
+        return new ResponseEntity<>(problem, safeHeaders, statusCode);
     }
 
     @ExceptionHandler(AccessDeniedException.class)
