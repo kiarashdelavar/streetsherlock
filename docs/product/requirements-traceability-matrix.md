@@ -8,7 +8,7 @@
 | Owner | Kiarash Delavar |
 | Approval | Product Owner approved — 3 August 2026 |
 | Catalogue | PROD-REQ-001 v1.0 |
-| Last updated | 3 August 2026 |
+| Last updated | 11 August 2026 |
 
 ## 1. Purpose
 
@@ -118,18 +118,18 @@ Trace rules:
 | QR-SEC-001 | SEC-TM-001, NFR-001 | AUTH-MATRIX-001 | independent security review later | Planned |
 | QR-SEC-002 | SEC-TM-001 | SEC-UP-001..008 | parser/AV design review | Planned |
 | QR-SEC-003 | SEC-TM-001 | SEC-CAP-001..008 | key/custody design | Planned |
-| QR-PRIV-001 | PRIV-DC-001, OPS-SLO-001 | PRIV-TEL-001..010 | processor/config decision | Planned |
+| QR-PRIV-001 | PRIV-DC-001, OPS-SLO-001 | PRIV-TEL-001..010 | processor/config decision | In progress — #37 covers PRIV-TEL-001..006; verification pending |
 | QR-PRIV-002 | PRIV-DC-001 | EXT-PRIV-001 | lawful basis, notices, retention, DPIA | Blocked |
 | QR-A11Y-001 | UX-STATE-001, NFR-001 | A11Y-CORE-001 | declared criteria/reviewer | Planned |
 | QR-A11Y-002 | UX-WF-001, NFR-001 | A11Y-CORE-002 | independent accessibility review | Planned |
 | QR-PERF-001 | NFR-001, OPS-SLO-001 | PERF-API-001 | declared demo profile | Planned |
 | QR-PERF-002 | NFR-001, OPS-SLO-001 | PERF-MAP-001 | declared snapshot/profile | Planned |
 | QR-PERF-003 | NFR-001, OPS-SLO-001 | PERF-DUP-001 | provider/profile | Planned |
-| QR-REL-001 | OPS-SLO-001 | RES-SUITE-001 | implemented fault controls | Planned |
+| QR-REL-001 | OPS-SLO-001 | RES-HEALTH-001, RES-SUITE-001 | implemented fault controls | In progress — #37 covers health foundation; broader resilience planned |
 | QR-REL-002 | ADR-005, OPS-SLO-001 | RES-OUT-001..006 | outbox implementation | Planned |
 | QR-REC-001 | OPS-BR-001 | REC-ISO-001 | no customer RPO/RTO claim | Planned |
 | QR-PORT-001 | ARCH-ENV-001, NFR-001 | CLONE-001 | Sprint 0 clean-clone package | Planned |
-| QR-MAIN-001 | ADR register, NFR-001 | ARCH-CI-001 | Sprint 1 CI implementation | Planned |
+| QR-MAIN-001 | ADR register, NFR-001 | API-ERR-001..006, ARCH-CI-001 | Sprint 1 CI implementation | In progress — #37 implementation; CI remains planned |
 | GR-001 | glossary/RACI/governance logs | DOC-CTRL-001 | approval before merge | Planned |
 | GR-002 | decision log | DOC-PR-001 | Product Owner decision | Planned |
 | GR-003 | PROD-TRACE-001 | DOC-TRACE-001 | zero unexplained orphans | Planned |
@@ -155,7 +155,13 @@ Trace rules:
 
 ## 10. Requirement-to-work mapping
 
-No implementation issues or PRs are linked yet. Sprint 1 backlog creation shall:
+Sprint 1 implementation issues are now linked as work begins. Links indicate scope and do not by themselves prove verification or acceptance.
+
+| Work item | Requirements | Tests/evidence | State |
+|---|---|---|---|
+| [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | In progress; test result pending |
+
+Remaining Sprint 1 backlog work shall:
 
 1. create at least one issue for every MVP **Must** requirement;
 2. reference all applicable requirement, threat/risk, ADR, journey and test IDs;
