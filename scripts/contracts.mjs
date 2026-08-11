@@ -38,11 +38,13 @@ function runPnpm(args) {
   if (result.error) {
     console.error(`Unable to run pnpm: ${result.error.message}`);
     const error = new Error("pnpm is unavailable.");
-    error.exitCode = 127;\n    throw error;
+    error.exitCode = 127;
+    throw error;
   }
   if (result.status !== 0) {
     const error = new Error("OpenAPI type generation failed.");
-    error.exitCode = result.status ?? 1;\n    throw error;
+    error.exitCode = result.status ?? 1;
+    throw error;
   }
 }
 
