@@ -5,7 +5,7 @@
 | Issue | #37 — problem details, correlation IDs, privacy-safe logging and health |
 | Requirements | QR-PRIV-001; QR-REL-001; QR-MAIN-001 |
 | Data class | Synthetic Local/CI only |
-| Tests | API-ERR-001..005; PRIV-TEL-001..006; RES-HEALTH-001 |
+| Tests | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001 |
 | Production readiness | Not claimed |
 | Independent assurance | Pending |
 
@@ -39,7 +39,7 @@ docker run --rm \
 ```
 
 The E01-07 tests verify unauthorized, forbidden, unknown-resource, valid and untrusted
-correlation-ID paths; telemetry omission; and minimal liveness/readiness responses.
+correlation-ID paths; telemetry omission; and minimal liveness/readiness responses, including degraded readiness.
 
 For each execution, record the source commit, JDK/Maven or container image version,
 timestamp, command, expected/actual test counts, result and limitations. Do not mark
