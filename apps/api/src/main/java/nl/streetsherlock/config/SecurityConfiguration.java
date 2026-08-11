@@ -4,9 +4,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import nl.streetsherlock.shared.web.ProblemResponseFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,13 +26,23 @@ class SecurityConfiguration {
     @Bean
     SecurityFilterChain securityFilterChain(
             HttpSecurity http,
-            JwtAuthenticationConverter jwtAuthenticationConverter) throws Exception {
+            JwtAuthenticationConverter jwtAuthenticationConverter,
+            ProblemResponseFactory problems) throws Exception {
         return http
                 .csrf(Customizer.withDefaults())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
                         .anyRequest().authenticated())
+                .exceptionHandling(exceptions -> exceptions
+                        .authenticationEntryPoint((request, response, exception) ->
+                                problems.write(HttpStatus.UNAUTHORIZED, request, response))
+                        .accessDeniedHandler((request, response, exception) ->
+                                problems.write(HttpStatus.FORBIDDEN, request, response)))
                 .oauth2ResourceServer(oauth2 -> oauth2
+                        .authenticationEntryPoint((request, response, exception) ->
+                                problems.write(HttpStatus.UNAUTHORIZED, request, response))
+                        .accessDeniedHandler((request, response, exception) ->
+                                problems.write(HttpStatus.FORBIDDEN, request, response))
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter)))
                 .build();
     }
