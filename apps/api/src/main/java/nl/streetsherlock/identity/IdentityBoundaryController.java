@@ -1,6 +1,9 @@
 package nl.streetsherlock.identity;
 
-import java.util.Map;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,22 +22,42 @@ class IdentityBoundaryController {
 
     @GetMapping("/identity/me")
     @PreAuthorize("hasAnyRole('INTAKE_EMPLOYEE', 'SUPERVISOR', 'AUDITOR')")
-    Map<String, String> currentIdentity(Authentication authentication) {
-        return Map.of(
-                "subject", authentication.getName(),
-                "environment", "synthetic-demo");
+    @Operation(
+            operationId = "getCurrentIdentity",
+            summary = "Read the authenticated synthetic identity")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Synthetic identity"),
+        @ApiResponse(responseCode = "401", description = "Authentication is required"),
+        @ApiResponse(responseCode = "403", description = "Access is denied")
+    })
+    CurrentIdentity currentIdentity(Authentication authentication) {
+        return new CurrentIdentity(authentication.getName(), "synthetic-demo");
     }
 
     @GetMapping("/demo/incidents/{incidentId}")
     @PreAuthorize("hasAnyRole('INTAKE_EMPLOYEE', 'SUPERVISOR')")
-    Map<String, String> readSyntheticIncident(@PathVariable String incidentId) {
+    @Operation(
+            operationId = "getSyntheticIncident",
+            summary = "Read one synthetic incident")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Synthetic incident"),
+        @ApiResponse(responseCode = "401", description = "Authentication is required"),
+        @ApiResponse(responseCode = "403", description = "Access is denied"),
+        @ApiResponse(responseCode = "404", description = "Resource not found")
+    })
+    SyntheticIncident readSyntheticIncident(@PathVariable String incidentId) {
         if (!SEEDED_INCIDENT_ID.equals(incidentId)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
-        return Map.of(
-                "id", SEEDED_INCIDENT_ID,
-                "classification", "synthetic",
-                "status", "new");
+        return new SyntheticIncident(SEEDED_INCIDENT_ID, "synthetic", "new");
+    }
+
+    @Schema(name = "CurrentIdentity")
+    record CurrentIdentity(String subject, String environment) {
+    }
+
+    @Schema(name = "SyntheticIncident")
+    record SyntheticIncident(String id, String classification, String status) {
     }
 }
