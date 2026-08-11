@@ -11,8 +11,12 @@ required=(
   scripts/database.sh scripts/verify-database.sh scripts/test-database-contract.sh
   apps/web/README.md apps/api/README.md apps/api/pom.xml
   apps/api/src/main/resources/application.yml
+  apps/api/src/main/java/nl/streetsherlock/config/CorrelationIdFilter.java
+  apps/api/src/main/java/nl/streetsherlock/config/ProblemResponseFactory.java
+  apps/api/src/main/java/nl/streetsherlock/config/ApiProblemHandler.java
   apps/api/src/test/java/nl/streetsherlock/ArchitectureBoundaryTest.java
   apps/api/src/test/java/nl/streetsherlock/ApiSmokeTest.java
+  apps/api/src/test/java/nl/streetsherlock/ObservabilityFoundationTest.java
   apps/vision/README.md apps/vision/pyproject.toml
   apps/vision/src/streetsherlock_vision/main.py
   apps/vision/tests/test_contract.py
@@ -28,6 +32,10 @@ grep -q 'pnpm@10.13.1' package.json
 grep -q '<version>3.5.4</version>' apps/api/pom.xml
 grep -q 'anyRequest().authenticated()' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
 grep -q 'oauth2ResourceServer' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
+grep -q 'X-Correlation-ID' apps/api/src/main/java/nl/streetsherlock/config/CorrelationIdFilter.java
+grep -q 'application/problem+json' apps/api/src/main/resources/application.yml || \
+  grep -q 'APPLICATION_PROBLEM_JSON' apps/api/src/main/java/nl/streetsherlock/config/ProblemResponseFactory.java
+grep -q 'readinessState' apps/api/src/main/resources/application.yml
 grep -q 'fastapi==0.116.1' apps/vision/pyproject.toml
 grep -q 'vision_not_implemented' apps/vision/src/streetsherlock_vision/main.py
 printf 'ARCH-TOOL-001: workspace structure passed.\n'
