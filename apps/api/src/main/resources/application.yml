@@ -1,6 +1,9 @@
 spring:
   application:
     name: streetsherlock-api
+  mvc:
+    problemdetails:
+      enabled: true
   security:
     oauth2:
       resourceserver:
@@ -13,6 +16,8 @@ server:
   error:
     include-message: never
     include-stacktrace: never
+    include-binding-errors: never
+    include-exception: false
 
 streetsherlock:
   environment: ${APP_ENVIRONMENT:}
@@ -26,4 +31,9 @@ management:
     health:
       probes:
         enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState
       show-details: never
