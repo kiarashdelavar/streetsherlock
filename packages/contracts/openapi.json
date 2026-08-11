@@ -1,0 +1,117 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "StreetSherlock API",
+    "version": "0.1.0",
+    "description": "Synthetic Local/CI contract. Production readiness is not claimed."
+  },
+  "paths": {
+    "/api/identity/me": {
+      "get": {
+        "operationId": "getCurrentIdentity",
+        "summary": "Read the authenticated synthetic identity",
+        "responses": {
+          "200": {
+            "description": "Synthetic identity",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CurrentIdentity" }
+              }
+            }
+          },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "403": { "$ref": "#/components/responses/Forbidden" }
+        }
+      }
+    },
+    "/api/demo/incidents/{incidentId}": {
+      "get": {
+        "operationId": "getSyntheticIncident",
+        "summary": "Read one synthetic incident",
+        "parameters": [
+          {
+            "name": "incidentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic incident",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SyntheticIncident" }
+              }
+            }
+          },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "403": { "$ref": "#/components/responses/Forbidden" },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication is required",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/Problem" }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Access is denied",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/Problem" }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/Problem" }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "CurrentIdentity": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subject", "environment"],
+        "properties": {
+          "subject": { "type": "string" },
+          "environment": { "type": "string", "const": "synthetic-demo" }
+        }
+      },
+      "SyntheticIncident": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "classification", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "classification": { "type": "string", "const": "synthetic" },
+          "status": { "type": "string", "const": "new" }
+        }
+      },
+      "Problem": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "title", "status", "detail", "instance", "correlationId"],
+        "properties": {
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "status": { "type": "integer", "format": "int32" },
+          "detail": { "type": "string" },
+          "instance": { "type": "string", "pattern": "^urn:streetsherlock:correlation:" },
+          "correlationId": { "type": "string", "format": "uuid" }
+        }
+      }
+    }
+  }
+}

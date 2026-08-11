@@ -12,6 +12,8 @@
     "test": "bash scripts/workspace.sh test",
     "build": "bash scripts/workspace.sh build",
     "check": "bash scripts/workspace.sh check",
+    "contracts:generate": "node scripts/contracts.mjs generate",
+    "contracts:check": "node scripts/contracts.mjs check",
     "web:dev": "pnpm --filter @streetsherlock/web dev",
     "web:test": "pnpm --filter @streetsherlock/web test"
   }

@@ -14,6 +14,7 @@ run_lint() {
 run_test() {
   bash scripts/test-tooling.sh
   bash scripts/test-database-contract.sh
+  bash scripts/contracts.sh check
   pnpm --filter @streetsherlock/web test
   python -m pytest apps/vision
 }

@@ -7,6 +7,8 @@ not imply production, security, privacy, accessibility or compliance approval.
 
 ### Added
 
+- E01-08 versioned OpenAPI contract, generated TypeScript API types, backend contract
+  tests and a deterministic stale-artifact drift check.
 - E01-07 API problem details, correlation IDs, allowlisted privacy-safe request logs,
   and separate minimal liveness/readiness probes.
 - Automated evidence for API error, telemetry privacy and health behavior.

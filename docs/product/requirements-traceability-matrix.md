@@ -129,10 +129,10 @@ Trace rules:
 | QR-REL-002 | ADR-005, OPS-SLO-001 | RES-OUT-001..006 | outbox implementation | Planned |
 | QR-REC-001 | OPS-BR-001 | REC-ISO-001 | no customer RPO/RTO claim | Planned |
 | QR-PORT-001 | ARCH-ENV-001, NFR-001 | CLONE-001 | Sprint 0 clean-clone package | Planned |
-| QR-MAIN-001 | ADR register, NFR-001 | API-ERR-001..006, ARCH-CI-001 | Sprint 1 CI implementation | In progress — #37 implementation; CI remains planned |
+| QR-MAIN-001 | ADR register, NFR-001 | API-ERR-001..006, CONTRACT-001..006, ARCH-CI-001 | Sprint 1 CI implementation | In progress — #37 and #38 foundations; broader CI remains planned |
 | GR-001 | glossary/RACI/governance logs | DOC-CTRL-001 | approval before merge | Planned |
 | GR-002 | decision log | DOC-PR-001 | Product Owner decision | Planned |
-| GR-003 | PROD-TRACE-001 | DOC-TRACE-001 | zero unexplained orphans | Planned |
+| GR-003 | PROD-TRACE-001 | CONTRACT-001..006, DOC-TRACE-001 | zero unexplained orphans | In progress — #38 contract trace implemented; broader audit planned |
 | GR-004 | RACI/external gap register | DOC-ASSURE-001 | accountable independent reviewer | Planned |
 | GR-005 | ARCH-ENV-001 | DOC-ENV-GATE-001 | separate customer authorization | Planned |
 | GR-006 | PROD-REQ-001 | DOC-CHANGE-001 | controlled impact analysis | Planned |
@@ -159,7 +159,8 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 
 | Work item | Requirements | Tests/evidence | State |
 |---|---|---|---|
-| [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | In progress; test result pending |
+| [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | Implemented; Local/CI test passed before merge |
+| [E01-08 #38](https://github.com/kiarashdelavar/streetsherlock/issues/38) | QR-MAIN-001; GR-003 | CONTRACT-001..006; [evidence](../testing/e01-08-openapi-contract.md) | In progress; branch evidence pending independent rerun |
 
 Remaining Sprint 1 backlog work shall:
 

@@ -1,4 +1,4 @@
-.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset api-test api-run web-test web-build web-run vision-lint vision-test vision-run
+.PHONY: bootstrap doctor lint test build check db-up db-verify db-down db-reset api-test api-run web-test web-build web-run vision-lint vision-test vision-run contracts-generate contracts-check
 
 bootstrap:
 	@bash scripts/bootstrap.sh
@@ -36,3 +36,7 @@ vision-test:
 	@python -m pytest apps/vision
 vision-run:
 	@python -m uvicorn streetsherlock_vision.main:app --app-dir apps/vision/src --host 127.0.0.1 --port 8001
+contracts-generate:
+	@bash scripts/contracts.sh generate
+contracts-check:
+	@bash scripts/contracts.sh check
