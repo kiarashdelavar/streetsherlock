@@ -1,6 +1,6 @@
 # StreetSherlock
 
-StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, and E01-06 adds the deny-by-default OIDC/dev identity boundary. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
+StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, E01-06 adds the deny-by-default OIDC/dev identity boundary, E01-07 adds privacy-safe observability, and E01-08 adds the generated OpenAPI/TypeScript contract boundary. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
 
 ## Prerequisites
 
@@ -66,6 +66,7 @@ Windows PowerShell commands are in [local web operations](docs/operations/local-
 | `make lint` / `make test` / `make build` / `make check` | validate the workspace foundations |
 | `make db-up` / `make db-verify` / `make db-down` | operate the synthetic spatial database |
 | `make api-test` / `make api-run` | test or run the Spring Boot shell |
+| `make contracts-generate` / `make contracts-check` | generate API types or fail on contract drift |
 | `make web-test` / `make web-build` / `make web-run` | test, build, or run the Next.js shell |
 | `make vision-lint` / `make vision-test` / `make vision-run` | lint, test, or run the disabled FastAPI contract |
 
@@ -74,7 +75,7 @@ Windows PowerShell commands are in [local web operations](docs/operations/local-
 - `apps/web` — Next.js accessible shell.
 - `apps/api` — Spring Boot modular-monolith and OIDC authorization boundary.
 - `apps/vision` — FastAPI health/readiness and disabled contract stub.
-- `packages/contracts` — reserved for generated/versioned contracts.
+- `packages/contracts` — reviewed OpenAPI contract and generated TypeScript API types.
 - `infra/database` — database image and versioned migrations.
 - `infra/identity` — synthetic local-only Keycloak realm; never a production IdP configuration.
 
@@ -86,6 +87,8 @@ PostgreSQL is the future authoritative business-state store. Workflow, AI, telem
 - `A11Y-SHELL-001..006` and `WEB-SMOKE-001` cover semantic shell behavior and rendering.
 - `API-VISION-001..004` and `ARCH-AUTH-002` cover versioned health, fail-closed readiness, strict refusal, and authorization denial.
 - `AUTH-MATRIX-001`, `AUTH-IDOR-001..008`, and `SEC-CONFIG-001` cover the synthetic OIDC role boundary; see [E01-06 authorization evidence](docs/testing/e01-06-authorization.md).
+- `API-ERR-001..006`, `PRIV-TEL-001..006`, and `RES-HEALTH-001` cover the observability foundation.
+- `CONTRACT-001..006` cover backend OpenAPI truth, generated TypeScript error types, and drift detection; see [E01-08 contract evidence](docs/testing/e01-08-openapi-contract.md).
 - Docker-backed identity/database evidence and manual keyboard/browser checks must be run in their stated environments; neither is inferred from static checks.
 - No real, personal, municipal, KLIC, image, model, or unverified third-party data is included.
 - No production, compliance, availability, AI, security, privacy, backup, identity-provider, or accessibility-conformance claim is made.
