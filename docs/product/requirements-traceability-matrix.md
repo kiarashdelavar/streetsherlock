@@ -159,7 +159,7 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 
 | Work item | Requirements | Tests/evidence | State |
 |---|---|---|---|
-| [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..005; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | In progress; test result pending |
+| [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | In progress; test result pending |
 
 Remaining Sprint 1 backlog work shall:
 
