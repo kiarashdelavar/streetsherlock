@@ -50,7 +50,8 @@ class ObservabilityFoundationTest {
                 .andExpect(jsonPath("$.status").value(401))
                 .andExpect(jsonPath("$.detail").value("Authentication is required."))
                 .andExpect(jsonPath("$.correlationId").isNotEmpty())
-                .andExpect(jsonPath("$.instance").doesNotExist());
+                .andExpect(jsonPath("$.instance").value(
+                        "urn:streetsherlock:correlation:" + VALID_CORRELATION_ID));
     }
 
     @Test
@@ -73,6 +74,9 @@ class ObservabilityFoundationTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(404))
                 .andExpect(jsonPath("$.detail").value("The requested resource was not found."))
+                .andExpect(jsonPath("$.instance").value(
+                        org.hamcrest.Matchers.startsWith(
+                                "urn:streetsherlock:correlation:")))
                 .andExpect(result -> assertThat(result.getResponse().getContentAsString())
                         .doesNotContain(restrictedIdentifier));
     }
@@ -110,7 +114,9 @@ class ObservabilityFoundationTest {
                 .andExpect(jsonPath("$.status").value(405))
                 .andExpect(jsonPath("$.detail").value("The request method is not supported."))
                 .andExpect(jsonPath("$.correlationId").isNotEmpty())
-                .andExpect(jsonPath("$.instance").value("/api/identity/me"));
+                .andExpect(jsonPath("$.instance").value(
+                        org.hamcrest.Matchers.startsWith(
+                                "urn:streetsherlock:correlation:")));
     }
 
     @Test
