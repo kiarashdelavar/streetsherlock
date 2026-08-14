@@ -8,7 +8,7 @@
 | Owner | Kiarash Delavar |
 | Approval | Product Owner approved — 3 August 2026 |
 | Catalogue | PROD-REQ-001 v1.0 |
-| Last updated | 14 August 2026 |
+| Last updated | 15 August 2026 |
 
 ## 1. Purpose
 
@@ -106,7 +106,7 @@ Trace rules:
 | DR-002 | ADR-002, DFD/object zones | privacy publication, signed URL | AUTH-OBJ-001, PRIV-OBJ-001 | Planned |
 | DR-003 | provenance model/ERD | derivation ambiguity, unverifiable output | API-PROV-001, DOC-PROV-001 | Planned |
 | DR-004 | source register | unclear licence, stale/current misclaim | LEG-SRC-001, ARCH-SRC-001 | Blocked in part |
-| DR-005 | fixture manifest | tampering/non-reproducible demo | ARCH-FIX-001..004 | Planned |
+| DR-005 | fixture manifest | tampering/non-reproducible demo | FIXTURE-001..006; API-SEED-001 | In progress — #40 fixture and database evidence implemented on PR #62 |
 | DR-006 | environment architecture | cross-environment promotion/restore | ARCH-ENV-001, REC-ENV-001 | Planned |
 | DR-007 | privacy baseline, recovery plan | over-retention, resurrection after restore | PRIV-LIFE-001, REC-DEL-001 | Blocked |
 | DR-008 | threat model, recovery plan | secret leakage/supply chain | SEC-SECRET-001..005 | Planned |
@@ -161,7 +161,8 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 |---|---|---|---|
 | [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | Implemented; Local/CI test passed before merge |
 | [E01-08 #38](https://github.com/kiarashdelavar/streetsherlock/issues/38) | QR-MAIN-001; GR-003 | CONTRACT-001..006; [evidence](../testing/e01-08-openapi-contract.md) | In progress; branch evidence pending independent rerun |
-| [E01-09 #39](https://github.com/kiarashdelavar/streetsherlock/issues/39) | QR-MAIN-001; QR-PORT-001; QR-SEC-001 | CI-001..012; SEC-SUPPLY-001..004; [evidence](../testing/e01-09-ci-foundation.md) | In progress; CI run #8 passed, merge and required-check protection pending |
+| [E01-09 #39](https://github.com/kiarashdelavar/streetsherlock/issues/39) | QR-MAIN-001; QR-PORT-001; QR-SEC-001 | CI-001..012; SEC-SUPPLY-001..004; [evidence](../testing/e01-09-ci-foundation.md) | Implemented; merged in PR #61 |
+| [E01-10 #40](https://github.com/kiarashdelavar/streetsherlock/issues/40) | DR-003; DR-005; QR-PORT-001 | FIXTURE-001..006; API-SEED-001; [evidence](../testing/e01-10-synthetic-deventer-fixtures.md) | In progress; PR #62 and CI evidence pending |
 Remaining Sprint 1 backlog work shall:
 
 1. create at least one issue for every MVP **Must** requirement;
