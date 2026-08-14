@@ -2,6 +2,8 @@
 set -euo pipefail
 
 required=(
+  .github/workflows/ci.yml
+  scripts/test-ci-contract.sh
   .tool-versions .nvmrc .node-version .python-version .sdkmanrc
   .env.example compose.yaml package.json pnpm-lock.yaml pnpm-workspace.yaml
   infra/database/Dockerfile

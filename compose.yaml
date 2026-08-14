@@ -58,4 +58,4 @@ services:
 
 volumes:
   streetsherlock_postgres:
-    name: streetsherlock_postgres
+   

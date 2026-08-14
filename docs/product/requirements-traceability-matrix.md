@@ -8,7 +8,7 @@
 | Owner | Kiarash Delavar |
 | Approval | Product Owner approved — 3 August 2026 |
 | Catalogue | PROD-REQ-001 v1.0 |
-| Last updated | 11 August 2026 |
+| Last updated | 14 August 2026 |
 
 ## 1. Purpose
 
@@ -161,7 +161,7 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 |---|---|---|---|
 | [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | Implemented; Local/CI test passed before merge |
 | [E01-08 #38](https://github.com/kiarashdelavar/streetsherlock/issues/38) | QR-MAIN-001; GR-003 | CONTRACT-001..006; [evidence](../testing/e01-08-openapi-contract.md) | In progress; branch evidence pending independent rerun |
-
+| [E01-09 #39](https://github.com/kiarashdelavar/streetsherlock/issues/39) | QR-MAIN-001; QR-PORT-001; QR-SEC-001 | CI-001..012; SEC-SUPPLY-001..004; [evidence](../testing/e01-09-ci-foundation.md) | In progress; first GitHub CI run pending |
 Remaining Sprint 1 backlog work shall:
 
 1. create at least one issue for every MVP **Must** requirement;

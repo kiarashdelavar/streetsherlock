@@ -82,7 +82,8 @@ Windows PowerShell commands are in [local web operations](docs/operations/local-
 PostgreSQL is the future authoritative business-state store. Workflow, AI, telemetry, vision tooling, identity infrastructure, and workspace tooling are never business sources of truth.
 
 ## Evidence and limitations
-
+- `CI-001..012` and `SEC-SUPPLY-001..004` cover the CI and supply-chain
+  foundation; see [E01-09 CI evidence](docs/testing/e01-09-ci-foundation.md).
 - `ARCH-TOOL-001`, `CLONE-001..002`, `ARCH-MOD-001..004`, and `API-SMOKE-001` cover the earlier foundation slices.
 - `A11Y-SHELL-001..006` and `WEB-SMOKE-001` cover semantic shell behavior and rendering.
 - `API-VISION-001..004` and `ARCH-AUTH-002` cover versioned health, fail-closed readiness, strict refusal, and authorization denial.
