@@ -46,6 +46,8 @@ fi
 grep -q 'Scan locked dependencies' "$workflow"
 grep -q 'trivyignores: .trivyignore.yaml' "$workflow"
 grep -q 'ENV_FILE: .env.example' "$workflow"
+grep -q 'Verify synthetic fixture' "$workflow"
+grep -q 'bash scripts/verify-synthetic-fixture.sh' "$workflow"
 grep -q 'expired_at: 2026-11-14' .trivyignore.yaml
 grep -q 'infra/database/Dockerfile' .trivyignore.yaml
 grep -q 'severity: HIGH,CRITICAL' "$workflow"
