@@ -148,6 +148,11 @@ jobs:
           ENV_FILE: .env.example
         run: bash scripts/verify-database.sh
 
+      - name: Verify synthetic fixture
+        env:
+          ENV_FILE: .env.example
+        run: bash scripts/verify-synthetic-fixture.sh
+
       - name: Remove CI database
         if: always()
         run: >
