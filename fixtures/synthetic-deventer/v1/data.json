@@ -1,0 +1,85 @@
+{
+  "fixture_id": "FIX-SYN-DEV-001",
+  "fixture_version": "1.0.0",
+  "scenario_clock": "2026-01-15T10:00:00Z",
+  "required_identity_roles": [
+    "intake_employee",
+    "supervisor",
+    "auditor"
+  ],
+  "municipality": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "code": "SYN-DEV",
+    "display_name": "Synthetic Deventer Demo",
+    "fixture_label": "Synthetic Deventer demo data — not a real municipal case",
+    "is_synthetic": true,
+    "created_at": "2026-01-15T10:00:00Z"
+  },
+  "provenance": [
+    {
+      "id": "00000000-0000-4000-8000-000000000010",
+      "source_id": "SRC-SYN-DEV",
+      "source_dataset_version": "1.0.0",
+      "source_record_id": "SYN-REPORT-001",
+      "snapshot_id": "FIX-SYN-DEV-001",
+      "schema_version": "1",
+      "classification": "synthetic",
+      "rights_id": "PROJECT-CREATED",
+      "synthetic": true,
+      "event_time": "2026-01-15T09:15:00Z",
+      "ingested_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000011",
+      "source_id": "SRC-SYN-DEV",
+      "source_dataset_version": "1.0.0",
+      "source_record_id": "SYN-INCIDENT-001",
+      "snapshot_id": "FIX-SYN-DEV-001",
+      "schema_version": "1",
+      "classification": "synthetic",
+      "rights_id": "PROJECT-CREATED",
+      "synthetic": true,
+      "event_time": "2026-01-15T09:30:00Z",
+      "ingested_at": "2026-01-15T10:00:00Z"
+    }
+  ],
+  "report": {
+    "id": "00000000-0000-4000-8000-000000000020",
+    "municipality_id": "00000000-0000-4000-8000-000000000001",
+    "provenance_id": "00000000-0000-4000-8000-000000000010",
+    "reference": "SYN-RPT-001",
+    "category": "road_surface",
+    "title": "Synthetic cycle-path surface report",
+    "summary": "Fictional surface damage in Demo Zone A. This is not a real report.",
+    "status": "under_review",
+    "occurred_at": "2026-01-15T09:15:00Z",
+    "received_at": "2026-01-15T09:20:00Z",
+    "longitude": 6.1557,
+    "latitude": 52.2552,
+    "row_version": 0
+  },
+  "incident": {
+    "id": "00000000-0000-4000-8000-000000000030",
+    "municipality_id": "00000000-0000-4000-8000-000000000001",
+    "provenance_id": "00000000-0000-4000-8000-000000000011",
+    "reference": "SYN-INC-001",
+    "category": "road_surface",
+    "title": "Synthetic Demo Zone A incident",
+    "summary": "Fictional incident created for repeatable StreetSherlock tests.",
+    "status": "confirmed",
+    "opened_at": "2026-01-15T09:30:00Z",
+    "longitude": 6.1557,
+    "latitude": 52.2552,
+    "row_version": 0
+  },
+  "report_incident_link": {
+    "id": "00000000-0000-4000-8000-000000000040",
+    "report_id": "00000000-0000-4000-8000-000000000020",
+    "incident_id": "00000000-0000-4000-8000-000000000030",
+    "link_status": "confirmed",
+    "linked_by_subject": "demo-intake",
+    "link_reason": "Deterministic synthetic fixture relationship",
+    "linked_at": "2026-01-15T09:35:00Z",
+    "unlinked_at": null
+  }
+}
