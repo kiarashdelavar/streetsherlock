@@ -1,0 +1,31 @@
+{
+  "manifest_id": "FIX-SYN-DEV-001",
+  "fixture_version": "1.0.0",
+  "source_id": "SRC-SYN-DEV",
+  "publisher": "StreetSherlock project",
+  "authority": "None; deliberately fictional",
+  "classification": "synthetic",
+  "rights_id": "PROJECT-CREATED",
+  "data_file": "fixtures/synthetic-deventer/v1/data.json",
+  "data_sha256": "26b54ced5b0b58d58535d7ae436ea2835fecdaf798b447ce7c7c1a1f878c8f13",
+  "schema_version": "1",
+  "scenario_clock": "2026-01-15T10:00:00Z",
+  "required_label": "Synthetic Deventer demo data — not a real municipal case",
+  "required_identity_roles": [
+    "intake_employee",
+    "supervisor",
+    "auditor"
+  ],
+  "record_counts": {
+    "municipality": 1,
+    "source_provenance": 2,
+    "report": 1,
+    "incident": 1,
+    "report_incident_link": 1
+  },
+  "limitations": [
+    "No real citizen, municipal, contractor or restricted data is included.",
+    "Coordinates are fictional demo coordinates and do not represent a real event.",
+    "The fixture does not prove municipal accuracy, partnership or production readiness."
+  ]
+}
