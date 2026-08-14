@@ -9,8 +9,13 @@ required=(
   infra/database/Dockerfile
   infra/database/migrations/V1__enable_required_extensions.sql
   infra/database/migrations/V2__create_application_schema.sql
+  infra/database/migrations/V3__create_report_incident_foundation.sql
+  infra/database/migrations/V4__seed_synthetic_deventer_fixture.sql
+  fixtures/synthetic-deventer/v1/data.json
+  fixtures/synthetic-deventer/v1/manifest.json
   scripts/versions.env scripts/verify-tools.sh scripts/bootstrap.sh
-  scripts/database.sh scripts/verify-database.sh scripts/test-database-contract.sh
+  scripts/database.sh scripts/verify-database.sh scripts/verify-synthetic-fixture.sh
+  scripts/test-database-contract.sh
   apps/web/README.md apps/api/README.md apps/api/pom.xml
   apps/api/src/main/resources/application.yml
   apps/api/src/main/java/nl/streetsherlock/config/CorrelationIdFilter.java
@@ -40,4 +45,6 @@ grep -q 'application/problem+json' apps/api/src/main/resources/application.yml |
 grep -q 'readinessState' apps/api/src/main/resources/application.yml
 grep -q 'fastapi==0.116.1' apps/vision/pyproject.toml
 grep -q 'vision_not_implemented' apps/vision/src/streetsherlock_vision/main.py
+grep -q '"source_id": "SRC-SYN-DEV"' fixtures/synthetic-deventer/v1/manifest.json
+grep -q 'Synthetic Deventer demo data — not a real municipal case' fixtures/synthetic-deventer/v1/manifest.json
 printf 'ARCH-TOOL-001: workspace structure passed.\n'
