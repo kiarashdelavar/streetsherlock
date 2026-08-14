@@ -33,6 +33,7 @@ services:
       FLYWAY_CONNECT_RETRIES: "20"
       FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
       FLYWAY_CLEAN_DISABLED: "true"
+      FLYWAY_DEFAULT_SCHEMA: public
     volumes:
       - ./infra/database/migrations:/flyway/sql:ro
     profiles: ["tools"]
@@ -50,7 +51,7 @@ services:
       - ./infra/identity/streetsherlock-dev-realm.json:/opt/keycloak/data/import/streetsherlock-dev-realm.json:ro
     profiles: ["identity"]
     healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000; echo -e 'GET /health/ready HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n' >&3; grep 'HTTP/1.1 200 OK' <&3"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000; echo -e 'GET /health/ready HTTP/1.1\\r\\nhost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3; grep 'HTTP/1.1 200 OK' <&3"]
       interval: 10s
       timeout: 5s
       retries: 30
@@ -58,4 +59,3 @@ services:
 
 volumes:
   streetsherlock_postgres:
-   
