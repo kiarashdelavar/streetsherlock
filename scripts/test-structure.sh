@@ -2,6 +2,8 @@
 set -euo pipefail
 
 required=(
+  .github/workflows/ci.yml .trivyignore.yaml
+  scripts/test-ci-contract.sh
   .tool-versions .nvmrc .node-version .python-version .sdkmanrc
   .env.example compose.yaml package.json pnpm-lock.yaml pnpm-workspace.yaml
   infra/database/Dockerfile
@@ -29,7 +31,7 @@ done
 
 grep -q '"private": true' package.json
 grep -q 'pnpm@10.13.1' package.json
-grep -q '<version>3.5.4</version>' apps/api/pom.xml
+grep -q '<version>3.5.12</version>' apps/api/pom.xml
 grep -q 'anyRequest().authenticated()' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
 grep -q 'oauth2ResourceServer' apps/api/src/main/java/nl/streetsherlock/config/SecurityConfiguration.java
 grep -q 'X-Correlation-ID' apps/api/src/main/java/nl/streetsherlock/config/CorrelationIdFilter.java

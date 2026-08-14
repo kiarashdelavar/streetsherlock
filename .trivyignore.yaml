@@ -1,0 +1,10 @@
+misconfigurations:
+  - id: AVD-DS-0002
+    paths:
+      - "infra/database/Dockerfile"
+    expired_at: 2026-11-14
+    statement: >-
+      The pinned pgvector image inherits the Docker Official Postgres entrypoint,
+      which starts with the privileges required to initialize volume ownership and
+      then drops to the postgres user before starting the server. Forcing a Dockerfile
+      USER breaks supported initialization paths. Reassess on base-image upgrade.

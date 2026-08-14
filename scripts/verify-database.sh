@@ -13,7 +13,7 @@ query() {
 
 [[ "$(query "SELECT extname FROM pg_extension WHERE extname = 'postgis';")" == "postgis" ]]
 [[ "$(query "SELECT extname FROM pg_extension WHERE extname = 'vector';")" == "vector" ]]
-[[ "$(query "SELECT COUNT(*) FROM flyway_schema_history WHERE success;")" -eq 2 ]]
+[[ "$(query "SELECT COUNT(*) FROM public.flyway_schema_history WHERE success;")" -eq 2 ]]
 [[ "$(query "SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name = 'streetsherlock';")" -eq 1 ]]
 
 printf 'DB-MIG-001..004: extensions, migration history and empty schema verified.\n'
