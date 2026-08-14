@@ -16,4 +16,4 @@ query() {
 [[ "$(query "SELECT COUNT(*) FROM public.flyway_schema_history WHERE success;")" -eq 4 ]]
 [[ "$(query "SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name = 'streetsherlock';")" -eq 1 ]]
 
-printf 'DB-MIG-001..004: extensions, migration history and empty schema verified.\n'
+printf 'DB-MIG-001..004: extensions, migration history and application schema verified.\n'
