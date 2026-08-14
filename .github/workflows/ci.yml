@@ -144,6 +144,8 @@ jobs:
           --profile tools run --rm flyway validate
 
       - name: Verify database
+        env:
+          ENV_FILE: .env.example
         run: bash scripts/verify-database.sh
 
       - name: Remove CI database
