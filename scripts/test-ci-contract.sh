@@ -43,7 +43,10 @@ if [[ -n "$unpinned_actions" ]]; then
   exit 1
 fi
 
-grep -q 'fail-on-severity: high' "$workflow"
+grep -q 'Scan locked dependencies' "$workflow"
+grep -q 'trivyignores: .trivyignore.yaml' "$workflow"
+grep -q 'expired_at: 2026-11-14' .trivyignore.yaml
+grep -q 'infra/database/Dockerfile' .trivyignore.yaml
 grep -q 'severity: HIGH,CRITICAL' "$workflow"
 grep -q 'exit-code: "1"' "$workflow"
 
