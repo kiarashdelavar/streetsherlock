@@ -1,6 +1,6 @@
 # StreetSherlock
 
-StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, E01-06 adds the deny-by-default OIDC/dev identity boundary, E01-07 adds privacy-safe observability, and E01-08 adds the generated OpenAPI/TypeScript contract boundary. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
+StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, E01-06 adds the deny-by-default OIDC/dev identity boundary, E01-07 adds privacy-safe observability, E01-08 adds the generated OpenAPI/TypeScript contract boundary, E01-09 adds the least-privilege CI matrix, and E01-10 adds deterministic synthetic Deventer fixtures with separate Report and Incident records. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
 
 ## Prerequisites
 
@@ -84,6 +84,9 @@ PostgreSQL is the future authoritative business-state store. Workflow, AI, telem
 ## Evidence and limitations
 - `CI-001..012` and `SEC-SUPPLY-001..004` cover the CI and supply-chain
   foundation; see [E01-09 CI evidence](docs/testing/e01-09-ci-foundation.md).
+- `FIXTURE-001..006` and `API-SEED-001` cover the versioned synthetic Deventer
+  fixture, provenance hash, role boundary, separate Report/Incident records and clean
+  database persistence; see [E01-10 fixture evidence](docs/testing/e01-10-synthetic-deventer-fixtures.md).
 - `ARCH-TOOL-001`, `CLONE-001..002`, `ARCH-MOD-001..004`, and `API-SMOKE-001` cover the earlier foundation slices.
 - `A11Y-SHELL-001..006` and `WEB-SMOKE-001` cover semantic shell behavior and rendering.
 - `API-VISION-001..004` and `ARCH-AUTH-002` cover versioned health, fail-closed readiness, strict refusal, and authorization denial.
