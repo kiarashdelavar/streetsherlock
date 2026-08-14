@@ -10,6 +10,11 @@ grep -q '127.0.0.1:' compose.yaml
 grep -q 'CREATE EXTENSION IF NOT EXISTS postgis' infra/database/migrations/V1__enable_required_extensions.sql
 grep -q 'CREATE EXTENSION IF NOT EXISTS vector' infra/database/migrations/V1__enable_required_extensions.sql
 grep -q 'public.flyway_schema_history' scripts/verify-database.sh
+grep -q 'CREATE TABLE streetsherlock.report (' infra/database/migrations/V3__create_report_incident_foundation.sql
+grep -q 'CREATE TABLE streetsherlock.incident (' infra/database/migrations/V3__create_report_incident_foundation.sql
+grep -q 'CREATE TABLE streetsherlock.report_incident_link (' infra/database/migrations/V3__create_report_incident_foundation.sql
+grep -q 'ON DELETE RESTRICT' infra/database/migrations/V3__create_report_incident_foundation.sql
+grep -q 'FIX-SYN-DEV-001 v1.0.0' infra/database/migrations/V4__seed_synthetic_deventer_fixture.sql
 
 if CONFIRM_DATABASE_RESET=wrong bash scripts/database.sh reset >/dev/null 2>&1; then
   printf 'Expected unconfirmed reset to fail.\n' >&2
