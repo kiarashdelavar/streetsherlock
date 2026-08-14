@@ -9,7 +9,7 @@
 | Source ID | `SRC-SYN-DEV` |
 | Data SHA-256 | `26b54ced5b0b58d58535d7ae436ea2835fecdaf798b447ce7c7c1a1f878c8f13` |
 | Environment | GitHub Actions Ubuntu runner with a clean Docker Compose database |
-| Evidence state | Pending the passing PR #62 CI run |
+| Evidence state | Passed — [CI run #14](https://github.com/kiarashdelavar/streetsherlock/actions/runs/31846591847) |
 
 ## Scope
 
@@ -52,5 +52,4 @@ Flyway validate and the database foundation checks.
   E01-10 does not introduce or claim a public HTTP API endpoint.
 - Passing automation does not establish municipal accuracy, legal approval, privacy
   approval, production readiness or acceptance.
-- The final evidence state and exact workflow-run link must be updated only after the
-  PR run completes successfully.
+- CI run #14 proves the declared automated checks for this commit and environment only.
