@@ -4,6 +4,8 @@ All notable implementation changes are recorded here. Passing Local/CI checks do
 not imply production, security, privacy, accessibility or compliance approval.
 
 ## Unreleased
+- E01-12 Local/CI/Preview/Demo environment skeletons, immutable release
+  manifest validation, non-mutating smoke planning and forward-only rollback rules.
 - E01-11 authorized privacy-safe persisted Report/Incident API and equivalent
   filtered spatial/list views with permission, empty, unavailable and retry states.
 - E01-10 deterministic synthetic Deventer fixture manifest, provenance hash,

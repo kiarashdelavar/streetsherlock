@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Document ID | ARCH-ENV-001 |
-| Version | 1.0 |
+| Version | 1.1 |
 | Status | Approved |
 | Owner | Kiarash Delavar |
 | Approval | Product Owner approved 3 August 2026 |
@@ -197,7 +197,19 @@ Requires contract/purpose, minimized export, DPIA/privacy/legal/security decisio
 
 Requires a separate operational authorization and repeated evidence. Shadow Pilot approval does not imply Production approval.
 
-## 12. Open decisions
+## 12. Sprint 1 implementation skeleton
+
+E01-12 implements repository-safe configuration examples for Local, CI, optional
+Preview and Demo under `deploy/environments`. The optional Preview Compose file
+accepts only digest-pinned images, does not build or pull automatically and applies
+a read-only/no-new-privileges runtime baseline.
+
+`scripts/deployment.sh` validates plans and manifests, provides non-mutating smoke
+checks and refuses Shadow Pilot, Production, cross-environment rollback and migration
+reversal. This implementation does not resolve hosting, access, secret-manager,
+network, backup or customer-authorization decisions.
+
+## 13. Open decisions
 
 | ID | Decision | Required owner |
 |---|---|---|
@@ -212,7 +224,7 @@ Requires a separate operational authorization and repeated evidence. Shadow Pilo
 | OD-ENV-09 | shadow-pilot export and deletion procedure | Municipality/privacy/legal |
 | OD-ENV-10 | production support, incident and exit responsibilities | Municipality/supplier |
 
-## 13. Approval
+## 14. Approval
 
 | Role | Decision | Date | Scope |
 |---|---|---|---|

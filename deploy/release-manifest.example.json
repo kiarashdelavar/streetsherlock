@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "release_id": "replace-with-reviewed-release",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "environment": "preview",
+  "fixture_id": "FIX-SYN-DEV-001",
+  "fixture_version": "1.0.0",
+  "migration_version": 4,
+  "api_image": "ghcr.io/kiarashdelavar/streetsherlock-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "web_image": "ghcr.io/kiarashdelavar/streetsherlock-web@sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "data_classification": "synthetic",
+  "external_side_effects": "disabled",
+  "created_at": "2026-08-15T00:00:00Z",
+  "limitations": [
+    "Preview skeleton only; no production or customer authorization.",
+    "Synthetic Deventer fixture only; no real municipal or personal data."
+  ]
+}

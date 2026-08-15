@@ -107,7 +107,7 @@ Trace rules:
 | DR-003 | provenance model/ERD | derivation ambiguity, unverifiable output | API-PROV-001, DOC-PROV-001 | Planned |
 | DR-004 | source register | unclear licence, stale/current misclaim | LEG-SRC-001, ARCH-SRC-001 | Blocked in part |
 | DR-005 | fixture manifest | tampering/non-reproducible demo | FIXTURE-001..006; API-SEED-001 | In progress — #40 fixture and database evidence implemented on PR #62 |
-| DR-006 | environment architecture | cross-environment promotion/restore | ARCH-ENV-001, REC-ENV-001 | Planned |
+| DR-006 | environment architecture | cross-environment promotion/restore | ARCH-ENV-001; OPS-DEP-001..004; OPS-RB-001..004 | In progress — #42 deployment and rollback skeletons implemented |
 | DR-007 | privacy baseline, recovery plan | over-retention, resurrection after restore | PRIV-LIFE-001, REC-DEL-001 | Blocked |
 | DR-008 | threat model, recovery plan | secret leakage/supply chain | SEC-SECRET-001..005 | Planned |
 
@@ -127,14 +127,14 @@ Trace rules:
 | QR-PERF-003 | NFR-001, OPS-SLO-001 | PERF-DUP-001 | provider/profile | Planned |
 | QR-REL-001 | OPS-SLO-001 | RES-HEALTH-001, RES-SUITE-001 | implemented fault controls | In progress — #37 covers health foundation; broader resilience planned |
 | QR-REL-002 | ADR-005, OPS-SLO-001 | RES-OUT-001..006 | outbox implementation | Planned |
-| QR-REC-001 | OPS-BR-001 | REC-ISO-001 | no customer RPO/RTO claim | Planned |
+| QR-REC-001 | OPS-BR-001 | OPS-RB-001..004; REC-ISO-001 | no customer RPO/RTO claim | In progress — #42 forward-only rollback planning implemented; restore evidence remains planned |
 | QR-PORT-001 | ARCH-ENV-001, NFR-001 | CLONE-001 | Sprint 0 clean-clone package | Planned |
 | QR-MAIN-001 | ADR register, NFR-001 | API-ERR-001..006, CONTRACT-001..006, ARCH-CI-001 | Sprint 1 CI implementation | In progress — #37 and #38 foundations; broader CI remains planned |
 | GR-001 | glossary/RACI/governance logs | DOC-CTRL-001 | approval before merge | Planned |
 | GR-002 | decision log | DOC-PR-001 | Product Owner decision | Planned |
 | GR-003 | PROD-TRACE-001 | CONTRACT-001..006, DOC-TRACE-001 | zero unexplained orphans | In progress — #38 contract trace implemented; broader audit planned |
 | GR-004 | RACI/external gap register | DOC-ASSURE-001 | accountable independent reviewer | Planned |
-| GR-005 | ARCH-ENV-001 | DOC-ENV-GATE-001 | separate customer authorization | Planned |
+| GR-005 | ARCH-ENV-001 | ARCH-ENV-001; OPS-DEP-001..004 | separate customer authorization | In progress — #42 explicitly refuses customer/Production targets |
 | GR-006 | PROD-REQ-001 | DOC-CHANGE-001 | controlled impact analysis | Planned |
 
 ## 9. Source-to-requirement coverage
@@ -163,7 +163,8 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 | [E01-08 #38](https://github.com/kiarashdelavar/streetsherlock/issues/38) | QR-MAIN-001; GR-003 | CONTRACT-001..006; [evidence](../testing/e01-08-openapi-contract.md) | In progress; branch evidence pending independent rerun |
 | [E01-09 #39](https://github.com/kiarashdelavar/streetsherlock/issues/39) | QR-MAIN-001; QR-PORT-001; QR-SEC-001 | CI-001..012; SEC-SUPPLY-001..004; [evidence](../testing/e01-09-ci-foundation.md) | Implemented; merged in PR #61 |
 | [E01-10 #40](https://github.com/kiarashdelavar/streetsherlock/issues/40) | DR-003; DR-005; QR-PORT-001 | FIXTURE-001..006; API-SEED-001; [evidence](../testing/e01-10-synthetic-deventer-fixtures.md) | Implemented; merged in PR #62 |
-| [E01-11 #41](https://github.com/kiarashdelavar/streetsherlock/issues/41) | FR-PUB-001/002; QR-A11Y-001 | AT-S1-001; AUTH-PUB-001; A11Y-PUB-001; API-READ-001; [evidence](../testing/e01-11-accessible-public-view.md) | In progress; branch CI and manual keyboard review pending |
+| [E01-11 #41](https://github.com/kiarashdelavar/streetsherlock/issues/41) | FR-PUB-001/002; QR-A11Y-001 | AT-S1-001; AUTH-PUB-001; A11Y-PUB-001; API-READ-001; [evidence](../testing/e01-11-accessible-public-view.md) | Implemented; merged in PR #63; independent accessibility review remains pending |
+| [E01-12 #42](https://github.com/kiarashdelavar/streetsherlock/issues/42) | DR-006; GR-005; QR-REC-001 | ARCH-ENV-001; OPS-DEP-001..004; OPS-RB-001..004; [evidence](../testing/e01-12-deployment-rollback.md) | In progress; PR and CI evidence pending |
 Remaining Sprint 1 backlog work shall:
 
 1. create at least one issue for every MVP **Must** requirement;
