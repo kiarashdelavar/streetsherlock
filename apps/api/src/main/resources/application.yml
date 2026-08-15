@@ -1,6 +1,10 @@
 spring:
   application:
     name: streetsherlock-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://127.0.0.1:5432/streetsherlock}
+    username: ${POSTGRES_USER:streetsherlock}
+    password: ${POSTGRES_PASSWORD:local-only-change-me}
   mvc:
     problemdetails:
       enabled: true
