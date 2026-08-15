@@ -68,7 +68,6 @@ Trace rules:
 | FR-CIT-008 | UX-STATE-001 | recoverable draft state | session loss/local exposure | AT-CIT-004 | Planned |
 | FR-CIT-009 | UX-STATE-001 | failure-state matrix | lost/duplicated accepted state | AT-CIT-005..011 | Planned |
 | FR-PUB-001 | UX-WF-001, PRIV-DC-001 | public projection | IDOR/field/media disclosure | AUTH-PUB-001, PRIV-PUB-007 | In progress — #41 authorized synthetic projection implemented |
-
 | FR-PUB-002 | UX-WF-001 | map/list equivalence | inaccessible map-only access | A11Y-PUB-001 | In progress — #41 equivalent filtered spatial/list views implemented |
 | FR-PUB-003 | SRC-REG-001, ARCH-ENV-001 | public result metadata | stale/misrepresented source | AT-PUB-002 | Planned |
 
