@@ -35,6 +35,9 @@ jobs:
       - name: Check CI security contract
         run: bash scripts/test-ci-contract.sh
 
+      - name: Check deployment and rollback contract
+        run: bash scripts/test-deployment-contract.sh
+
       - name: Validate Compose configuration
         run: docker compose --env-file .env.example config --quiet
   backend:
