@@ -21,6 +21,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/public/records": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List privacy-safe synthetic Report and Incident projections */
+        get: operations["listPublicRecords"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/demo/incidents/{incidentId}": {
         parameters: {
             query?: never;
@@ -54,6 +71,29 @@ export interface components {
             /** @constant */
             status: "new";
         };
+        PublicRecord: {
+            /** Format: uuid */
+            id: string;
+            kind: "report" | "incident";
+            reference: string;
+            category: string;
+            title: string;
+            summary: string;
+            status: string;
+            /** Format: date-time */
+            occurredAt: string;
+            /** Format: double */
+            longitude: number;
+            /** Format: double */
+            latitude: number;
+            /** @constant */
+            fixtureLabel: "Synthetic Deventer demo data — not a real municipal case";
+        };
+        PublicRecordsResponse: {
+            /** @constant */
+            fixtureVersion: "1.0.0";
+            items: components["schemas"]["PublicRecord"][];
+        };
         Problem: {
             type: string;
             title: string;
@@ -77,6 +117,15 @@ export interface components {
         };
         /** @description Access is denied */
         Forbidden: {
+            headers: {
+                [name: string]: unknown;
+            };
+            content: {
+                "application/problem+json": components["schemas"]["Problem"];
+            };
+        };
+        /** @description Authoritative database unavailable */
+        ServiceUnavailable: {
             headers: {
                 [name: string]: unknown;
             };
@@ -121,6 +170,29 @@ export interface operations {
             };
             401: components["responses"]["Unauthorized"];
             403: components["responses"]["Forbidden"];
+        };
+    };
+    listPublicRecords: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Synthetic public records */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicRecordsResponse"];
+                };
+            };
+            401: components["responses"]["Unauthorized"];
+            403: components["responses"]["Forbidden"];
+            503: components["responses"]["ServiceUnavailable"];
         };
     };
     getSyntheticIncident: {
