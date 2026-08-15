@@ -21,6 +21,10 @@ required=(
   apps/api/src/main/java/nl/streetsherlock/config/CorrelationIdFilter.java
   apps/api/src/main/java/nl/streetsherlock/config/ProblemResponseFactory.java
   apps/api/src/main/java/nl/streetsherlock/config/ApiProblemHandler.java
+  apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecord.java
+  apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecordRepository.java
+  apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecordController.java
+  apps/api/src/test/java/nl/streetsherlock/publicview/PublicRecordApiTest.java
   apps/api/src/test/java/nl/streetsherlock/ArchitectureBoundaryTest.java
   apps/api/src/test/java/nl/streetsherlock/ApiSmokeTest.java
   apps/api/src/test/java/nl/streetsherlock/ObservabilityFoundationTest.java
@@ -28,6 +32,8 @@ required=(
   apps/vision/src/streetsherlock_vision/main.py
   apps/vision/tests/test_contract.py
   docs/operations/local-vision.md
+  docs/operations/local-public-view.md
+  docs/testing/e01-11-accessible-public-view.md
 )
 
 for path in "${required[@]}"; do
@@ -45,6 +51,10 @@ grep -q 'application/problem+json' apps/api/src/main/resources/application.yml |
 grep -q 'readinessState' apps/api/src/main/resources/application.yml
 grep -q 'fastapi==0.116.1' apps/vision/pyproject.toml
 grep -q 'vision_not_implemented' apps/vision/src/streetsherlock_vision/main.py
+grep -q 'FROM streetsherlock.report' apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecordRepository.java
+grep -q 'FROM streetsherlock.incident' apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecordRepository.java
+grep -q 'hasAnyRole' apps/api/src/main/java/nl/streetsherlock/publicview/PublicRecordController.java
+grep -q '/api/public/records' packages/contracts/openapi.json
 grep -q '"source_id": "SRC-SYN-DEV"' fixtures/synthetic-deventer/v1/manifest.json
 grep -q 'Synthetic Deventer demo data — not a real municipal case' fixtures/synthetic-deventer/v1/manifest.json
 printf 'ARCH-TOOL-001: workspace structure passed.\n'

@@ -17,8 +17,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <nav aria-label="Primary navigation">
             <ul>
               <li><Link href="/" aria-current="page">Overview</Link></li>
-              <li><a href="#map-view">Map placeholder</a></li>
-              <li><a href="#list-view">List placeholder</a></li>
+              <li><a href="#map-view">Spatial view</a></li>
+              <li><a href="#list-view">Accessible list</a></li>
             </ul>
           </nav>
         </header>

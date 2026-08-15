@@ -15,12 +15,45 @@
             "description": "Synthetic identity",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/CurrentIdentity" }
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentIdentity"
+                }
               }
             }
           },
-          "401": { "$ref": "#/components/responses/Unauthorized" },
-          "403": { "$ref": "#/components/responses/Forbidden" }
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/api/public/records": {
+      "get": {
+        "operationId": "listPublicRecords",
+        "summary": "List privacy-safe synthetic Report and Incident projections",
+        "responses": {
+          "200": {
+            "description": "Synthetic public records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicRecordsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
         }
       }
     },
@@ -33,7 +66,9 @@
             "name": "incidentId",
             "in": "path",
             "required": true,
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -41,13 +76,21 @@
             "description": "Synthetic incident",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/SyntheticIncident" }
+                "schema": {
+                  "$ref": "#/components/schemas/SyntheticIncident"
+                }
               }
             }
           },
-          "401": { "$ref": "#/components/responses/Unauthorized" },
-          "403": { "$ref": "#/components/responses/Forbidden" },
-          "404": { "$ref": "#/components/responses/NotFound" }
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
         }
       }
     }
@@ -58,7 +101,9 @@
         "description": "Authentication is required",
         "content": {
           "application/problem+json": {
-            "schema": { "$ref": "#/components/schemas/Problem" }
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
           }
         }
       },
@@ -66,7 +111,19 @@
         "description": "Access is denied",
         "content": {
           "application/problem+json": {
-            "schema": { "$ref": "#/components/schemas/Problem" }
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "ServiceUnavailable": {
+        "description": "Authoritative database unavailable",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
           }
         }
       },
@@ -74,7 +131,9 @@
         "description": "Resource not found",
         "content": {
           "application/problem+json": {
-            "schema": { "$ref": "#/components/schemas/Problem" }
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
           }
         }
       }
@@ -83,33 +142,156 @@
       "CurrentIdentity": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["subject", "environment"],
+        "required": [
+          "subject",
+          "environment"
+        ],
         "properties": {
-          "subject": { "type": "string" },
-          "environment": { "type": "string", "const": "synthetic-demo" }
+          "subject": {
+            "type": "string"
+          },
+          "environment": {
+            "type": "string",
+            "const": "synthetic-demo"
+          }
         }
       },
       "SyntheticIncident": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "classification", "status"],
+        "required": [
+          "id",
+          "classification",
+          "status"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "classification": { "type": "string", "const": "synthetic" },
-          "status": { "type": "string", "const": "new" }
+          "id": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string",
+            "const": "synthetic"
+          },
+          "status": {
+            "type": "string",
+            "const": "new"
+          }
+        }
+      },
+      "PublicRecord": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "reference",
+          "category",
+          "title",
+          "summary",
+          "status",
+          "occurredAt",
+          "longitude",
+          "latitude",
+          "fixtureLabel"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "report",
+              "incident"
+            ]
+          },
+          "reference": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "occurredAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "fixtureLabel": {
+            "type": "string",
+            "const": "Synthetic Deventer demo data — not a real municipal case"
+          }
+        }
+      },
+      "PublicRecordsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "fixtureVersion",
+          "items"
+        ],
+        "properties": {
+          "fixtureVersion": {
+            "type": "string",
+            "const": "1.0.0"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicRecord"
+            }
+          }
         }
       },
       "Problem": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["type", "title", "status", "detail", "instance", "correlationId"],
+        "required": [
+          "type",
+          "title",
+          "status",
+          "detail",
+          "instance",
+          "correlationId"
+        ],
         "properties": {
-          "type": { "type": "string" },
-          "title": { "type": "string" },
-          "status": { "type": "integer", "format": "int32" },
-          "detail": { "type": "string" },
-          "instance": { "type": "string", "pattern": "^urn:streetsherlock:correlation:" },
-          "correlationId": { "type": "string", "format": "uuid" }
+          "type": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "instance": {
+            "type": "string",
+            "pattern": "^urn:streetsherlock:correlation:"
+          },
+          "correlationId": {
+            "type": "string",
+            "format": "uuid"
+          }
         }
       }
     }
