@@ -1,6 +1,6 @@
 # StreetSherlock
 
-StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, E01-06 adds the deny-by-default OIDC/dev identity boundary, E01-07 adds privacy-safe observability, E01-08 adds the generated OpenAPI/TypeScript contract boundary, E01-09 adds the least-privilege CI matrix, and E01-10 adds deterministic synthetic Deventer fixtures with separate Report and Incident records. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
+StreetSherlock is in Sprint 1 engineering-foundation work. E01-01 provides the deterministic monorepo shell, E01-02 adds the synthetic local spatial database foundation, E01-03 adds the Spring Boot modular-monolith shell, E01-04 adds the accessible Next.js shell, E01-05 adds the disabled FastAPI vision contract, E01-06 adds the deny-by-default OIDC/dev identity boundary, E01-07 adds privacy-safe observability, E01-08 adds the generated OpenAPI/TypeScript contract boundary, E01-09 adds the least-privilege CI matrix, E01-10 adds deterministic synthetic Deventer fixtures with separate Report and Incident records, and E01-11 adds an authorized privacy-safe API with equivalent spatial and accessible list views. Real data, a public demo, pilot, AI processing, production identity provider selection, and production use remain unauthorized.
 
 ## Prerequisites
 
@@ -56,6 +56,8 @@ make vision-run
 
 Open `http://127.0.0.1:3000`; API health is at `http://127.0.0.1:8080/actuator/health`; local identity is at `http://127.0.0.1:8180`; vision liveness is at `http://127.0.0.1:8001/v1/health/live`. These foundations run independently and no cross-service business flow is claimed.
 
+The persisted synthetic Report/Incident path is documented in [local public-view operations](docs/operations/local-public-view.md).
+
 Windows PowerShell commands are in [local web operations](docs/operations/local-web.md), [local API operations](docs/operations/local-api.md), [local database operations](docs/operations/local-database.md), and [local vision operations](docs/operations/local-vision.md).
 
 ## Root commands
@@ -87,6 +89,9 @@ PostgreSQL is the future authoritative business-state store. Workflow, AI, telem
 - `FIXTURE-001..006` and `API-SEED-001` cover the versioned synthetic Deventer
   fixture, provenance hash, role boundary, separate Report/Incident records and clean
   database persistence; see [E01-10 fixture evidence](docs/testing/e01-10-synthetic-deventer-fixtures.md).
+- `AT-S1-001`, `AUTH-PUB-001`, `A11Y-PUB-001` and `API-READ-001` cover
+  the authorized persisted public projection and equivalent filtered views; see
+  [E01-11 evidence](docs/testing/e01-11-accessible-public-view.md).
 - `ARCH-TOOL-001`, `CLONE-001..002`, `ARCH-MOD-001..004`, and `API-SMOKE-001` cover the earlier foundation slices.
 - `A11Y-SHELL-001..006` and `WEB-SMOKE-001` cover semantic shell behavior and rendering.
 - `API-VISION-001..004` and `ARCH-AUTH-002` cover versioned health, fail-closed readiness, strict refusal, and authorization denial.
