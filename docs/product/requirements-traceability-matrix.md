@@ -67,8 +67,9 @@ Trace rules:
 | FR-CIT-007 | PRIV-DC-001, SEC-TM-001 | original/derivative split | unsafe publication/signed URL | PRIV-PUB-001..006 | Planned |
 | FR-CIT-008 | UX-STATE-001 | recoverable draft state | session loss/local exposure | AT-CIT-004 | Planned |
 | FR-CIT-009 | UX-STATE-001 | failure-state matrix | lost/duplicated accepted state | AT-CIT-005..011 | Planned |
-| FR-PUB-001 | UX-WF-001, PRIV-DC-001 | public projection | IDOR/field/media disclosure | AUTH-PUB-001, PRIV-PUB-007 | Planned |
-| FR-PUB-002 | UX-WF-001 | map/list equivalence | inaccessible map-only access | A11Y-PUB-001 | Planned |
+| FR-PUB-001 | UX-WF-001, PRIV-DC-001 | public projection | IDOR/field/media disclosure | AUTH-PUB-001, PRIV-PUB-007 | In progress — #41 authorized synthetic projection implemented |
+
+| FR-PUB-002 | UX-WF-001 | map/list equivalence | inaccessible map-only access | A11Y-PUB-001 | In progress — #41 equivalent filtered spatial/list views implemented |
 | FR-PUB-003 | SRC-REG-001, ARCH-ENV-001 | public result metadata | stale/misrepresented source | AT-PUB-002 | Planned |
 
 ## 5. Municipal workflow traceability
@@ -162,7 +163,8 @@ Sprint 1 implementation issues are now linked as work begins. Links indicate sco
 | [E01-07 #37](https://github.com/kiarashdelavar/streetsherlock/issues/37) | QR-PRIV-001; QR-REL-001; QR-MAIN-001 | API-ERR-001..006; PRIV-TEL-001..006; RES-HEALTH-001; [evidence](../testing/e01-07-observability.md) | Implemented; Local/CI test passed before merge |
 | [E01-08 #38](https://github.com/kiarashdelavar/streetsherlock/issues/38) | QR-MAIN-001; GR-003 | CONTRACT-001..006; [evidence](../testing/e01-08-openapi-contract.md) | In progress; branch evidence pending independent rerun |
 | [E01-09 #39](https://github.com/kiarashdelavar/streetsherlock/issues/39) | QR-MAIN-001; QR-PORT-001; QR-SEC-001 | CI-001..012; SEC-SUPPLY-001..004; [evidence](../testing/e01-09-ci-foundation.md) | Implemented; merged in PR #61 |
-| [E01-10 #40](https://github.com/kiarashdelavar/streetsherlock/issues/40) | DR-003; DR-005; QR-PORT-001 | FIXTURE-001..006; API-SEED-001; [evidence](../testing/e01-10-synthetic-deventer-fixtures.md) | In progress; PR #62 and CI evidence pending |
+| [E01-10 #40](https://github.com/kiarashdelavar/streetsherlock/issues/40) | DR-003; DR-005; QR-PORT-001 | FIXTURE-001..006; API-SEED-001; [evidence](../testing/e01-10-synthetic-deventer-fixtures.md) | Implemented; merged in PR #62 |
+| [E01-11 #41](https://github.com/kiarashdelavar/streetsherlock/issues/41) | FR-PUB-001/002; QR-A11Y-001 | AT-S1-001; AUTH-PUB-001; A11Y-PUB-001; API-READ-001; [evidence](../testing/e01-11-accessible-public-view.md) | In progress; branch CI and manual keyboard review pending |
 Remaining Sprint 1 backlog work shall:
 
 1. create at least one issue for every MVP **Must** requirement;
