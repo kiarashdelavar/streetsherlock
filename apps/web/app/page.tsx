@@ -34,8 +34,6 @@ export default function Home() {
 
   useEffect(() => {
     const controller = new AbortController();
-    setState({ name: "loading" });
-
     fetch("/api/public/records", { signal: controller.signal })
       .then(async (response) => {
         if (response.status === 401 || response.status === 403) {
@@ -111,7 +109,13 @@ export default function Home() {
         <section className="system-state" role="alert">
           <h2>The persisted view is unavailable</h2>
           <p>No authoritative state was changed. Check the API and try again.</p>
-          <button type="button" onClick={() => setRetry((value) => value + 1)}>
+          <button
+            type="button"
+            onClick={() => {
+              setState({ name: "loading" });
+              setRetry((value) => value + 1);
+            }}
+          >
             Retry
           </button>
         </section>
