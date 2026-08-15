@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -35,9 +36,8 @@ class PublicRecordApiTest {
                 record("00000000-0000-4000-8000-000000000020", "report", "SYN-RPT-001"),
                 record("00000000-0000-4000-8000-000000000030", "incident", "SYN-INC-001")));
 
-        mockMvc.perform(get("/api/public/records").with(jwt().jwt(jwt -> jwt
-                        .claim("realm_access", java.util.Map.of(
-                                "roles", List.of("intake_employee"))))))
+        mockMvc.perform(get("/api/public/records").with(jwt()
+                        .authorities(new SimpleGrantedAuthority("ROLE_INTAKE_EMPLOYEE"))))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.fixtureVersion").value("1.0.0"))
