@@ -46,6 +46,8 @@ fi
 grep -q 'Scan locked dependencies' "$workflow"
 grep -q 'trivyignores: .trivyignore.yaml' "$workflow"
 grep -q 'ENV_FILE: .env.example' "$workflow"
+grep -q 'Check deployment and rollback contract' "$workflow"
+grep -q 'bash scripts/test-deployment-contract.sh' "$workflow"
 grep -q 'Verify synthetic fixture' "$workflow"
 grep -q 'bash scripts/verify-synthetic-fixture.sh' "$workflow"
 grep -q 'expired_at: 2026-11-14' .trivyignore.yaml
