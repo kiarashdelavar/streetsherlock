@@ -27,6 +27,9 @@ streetsherlock:
   environment: ${APP_ENVIRONMENT:}
 
 management:
+  health:
+    db:
+      enabled: false
   endpoints:
     web:
       exposure:
