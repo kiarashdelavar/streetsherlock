@@ -74,6 +74,7 @@ export interface components {
         PublicRecord: {
             /** Format: uuid */
             id: string;
+            /** @enum {string} */
             kind: "report" | "incident";
             reference: string;
             category: string;
